@@ -97,16 +97,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421a6a987660752449cc9f9aef150ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedXmin: 18
-  speedXmax: 23
+  speedXmin: 23
+  speedXmax: 28
   lifetime: 1
-  distance: 0.7
   damage: 5
-  WhatIsSolid:
-    serializedVersion: 2
-    m_Bits: 256
-  YRangePlus: 1
-  YRangeMinus: 1
+  YRangePlus: 5
+  YRangeMinus: 5
   Y: 0
   X: 0
 --- !u!61 &1413215613761155743
