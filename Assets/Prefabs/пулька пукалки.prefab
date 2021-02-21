@@ -10,10 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 680094924145443670}
   - component: {fileID: 56287114960389226}
-  - component: {fileID: 1814121222684846511}
-  m_Layer: 8
+  - component: {fileID: -3332702916646063470}
+  - component: {fileID: -6933342539275189355}
+  - component: {fileID: -2116097890467147006}
+  m_Layer: 0
   m_Name: "\u043F\u0443\u043B\u044C\u043A\u0430 \u043F\u0443\u043A\u0430\u043B\u043A\u0438"
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7855068877986177449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1.5, y: 1.5000001, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -83,7 +85,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1814121222684846511
+--- !u!61 &-3332702916646063470
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855068877986177449}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.375, y: 0.1875}
+    newSize: {x: 0.06, y: 0.05}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.4, y: 0.2}
+  m_EdgeRadius: 0
+--- !u!114 &-6933342539275189355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,15 +123,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 421a6a987660752449cc9f9aef150ce1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speedXmin: 18
-  speedXmax: 23
+  speedXmin: 17
+  speedXmax: 25
   lifetime: 1
-  distance: 0.6
-  damage: 5
-  WhatIsSolid:
-    serializedVersion: 2
-    m_Bits: 256
+  damage: 1
   YRangePlus: 1
   YRangeMinus: 1
   Y: 0
   X: 0
+--- !u!50 &-2116097890467147006
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7855068877986177449}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
