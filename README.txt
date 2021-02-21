@@ -1,1 +1,1 @@
-check to master
+//проверка отправки изменений на master
