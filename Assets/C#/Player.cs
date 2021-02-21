@@ -6,21 +6,40 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Rigidbody2D rb;
+    public Animator _animatorController;
     public int _speed;
     public Vector2 moveVector;
+    public float JumpForce;
     public bool flip = true;
 
+
+
+    //переменные для работы с состояниями и заземлением
+    private bool isGrounded = false;
+    CharState State;
     private void Start()
     {
+        _animatorController = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.Space)&&isGrounded)
+        {
+            Jump();
+        }
+        // if (isGrounded)
+        // {
+        //     _animatorController.Play("RunMan");
+        // }
+        CheckGround();
         walk();
     }
-
+void Jump()
+{
+    rb.velocity= (Vector2.up * JumpForce);
+}
      void walk()
      {
          moveVector.x = Input.GetAxis("Horizontal");
@@ -42,6 +61,29 @@ public class Player : MonoBehaviour
          this.gameObject.transform.Rotate(0, 180, 0);
          
      }
-     
-     
+     private void CheckGround()
+    {
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.3F);
+        isGrounded = colliders.Length > 1;
+        if (!isGrounded) State = CharState.Jump;
+        if (isGrounded) State = CharState.Run;
+        if (State==CharState.Jump)
+        {
+            _animatorController.Play("JumpTest");
+        }
+        if (State==CharState.Run)
+        {
+            _animatorController.Play("RunMan");
+        }
+
+    }
+     public enum CharState
+{
+    Idle,
+    Run,
+    Jump
 }
+}
+
+
+
