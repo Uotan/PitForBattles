@@ -47,8 +47,6 @@ public class ShotgunBullet : MonoBehaviour
         lifetime -= Time.deltaTime;
         
         transform.Translate(-X * Time.deltaTime,Y*Time.deltaTime, 0);
-
-
-
     }
+    
 }
