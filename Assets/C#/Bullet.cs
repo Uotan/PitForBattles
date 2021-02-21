@@ -1,33 +1,37 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class Bullet : MonoBehaviour
+class Bullet : MonoBehaviour
 {
-    public float speed;
-    public float lifetime;
-    public float distance;
-    public int damage;
-    public LayerMask WhatIsSolid;
-
-    private void Update()
-    {
-        RaycastHit2D raycastHit2D = Physics2D.Raycast(transform.position, transform.up, distance, WhatIsSolid);
-        if (raycastHit2D.collider!=null)
+        public float lifetime;
+        public int damage;
+        public int speed;
+//      ==================================================
+//      ==================================================
+        void Update ()
         {
-            if (raycastHit2D.collider.CompareTag("Enemy"))
+            transform.Translate (speed*Time.deltaTime, 0, 0 );
+                if (lifetime <= 0)
+                {
+                    Destroy(gameObject);
+                }
+            lifetime -= Time.deltaTime;
+        }
+//      ==================================================
+        void OnTriggerEnter2D(Collider2D other) 
+        {
+            if (other.CompareTag("Bullet"))
             {
-                raycastHit2D.collider.GetComponent<Enemy>().TakeDamage(damage);
-
+                
             }
-            Destroy(gameObject);
-
+            else
+            {
+                if (other.CompareTag("Enemy"))
+                {
+                other.GetComponent<Enemy>().TakeDamage(damage);
+                }
+                Destroy(gameObject);
+            } 
         }
-        if (lifetime<=0)
-        {
-            Destroy(gameObject);
-        }
-        lifetime -= Time.deltaTime;
-        transform.Translate(Vector2.right * (speed * Time.deltaTime));
-    }
+//      ==================================================
 }
