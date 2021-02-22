@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AutoGun : MonoBehaviour
 {
+
     public GameObject bullet;
     public Transform shootpoint;
 
@@ -32,7 +33,7 @@ public class AutoGun : MonoBehaviour
         {
             if (TimeBTWShots <= 0)
             {
-                if (Input.GetKey(KeyCode.N))
+                if (Input.GetKey(KeyCode.K))
                 {
                         Instantiate(bullet, shootpoint.position,transform.rotation);
                         TimeBTWShots = StartTimeBTWShots; 

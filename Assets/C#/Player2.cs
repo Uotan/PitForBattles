@@ -3,14 +3,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player2 : MonoBehaviour
 {
+    public bool Dead=false;
     public Rigidbody2D rb;
     public Animator _animatorController;
     public int _speed;
-    public Vector2 moveVector;
+    public int health;
+    private float slidingH;
+    private float slidingV;
     public float JumpForce;
     public bool flip = true;
+    
 
     public List<GameObject> unlockedWeapons;
     public GameObject[] allWeapons;
@@ -27,36 +31,74 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        
-        if(Input.GetKeyDown(KeyCode.Space)&&isGrounded)
+            if (health<=0)
+           {
+               Dead=true;
+               for (int i = 0; i < unlockedWeapons.Count; i++)
+               {
+                   unlockedWeapons[i].SetActive(false);
+               }
+               State = CharState.Dead;
+
+              _animatorController.Play("DeadMan");
+           }
+    if (Dead==false)
+    {       
+
+        if (rb.velocity.y==0 && rb.velocity.x==0)
+        {
+            State = CharState.Idle;
+        }
+        if (State == CharState.Idle)
+        {
+            _animatorController.Play("IdlePlayer");
+        }
+        if(Input.GetKeyDown(KeyCode.UpArrow)&&isGrounded)
         {
             Jump();
         }
-        // if (isGrounded)
-        // {
-        //     _animatorController.Play("RunMan");
-        // }
         CheckGround();
         walk();
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.L))
         {
             SwitchWeapon();
         }
     }
+}
 void Jump()
 {
     rb.velocity= (Vector2.up * JumpForce);
 }
      void walk()
      {
-         moveVector.x = Input.GetAxis("Horizontal");
+         float h = 0f;
+         float v = 0f;
+         Vector2 smoothedInput;
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                h = -1f;
+                State = CharState.Run;
+                _animatorController.Play("RunMan");
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                h = 1f;
+                State = CharState.Run;
+                _animatorController.Play("RunMan");
+            }
+        smoothedInput = SmoothInput(h,v);
+
+        
+        float smoothedH = smoothedInput.x;
+        float smoothedV = smoothedInput.y;
          
-         rb.velocity = new Vector2(moveVector.x * _speed, rb.velocity.y);
-         if (moveVector.x<0&&!flip)
+         
+         rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
+         if (smoothedInput.x<0&&!flip)
          {
              Flip();
          }
-         if (moveVector.x > 0 && flip)
+         if (smoothedInput.x > 0 && flip)
          {
              Flip();
          }
@@ -73,22 +115,20 @@ void Jump()
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.35F);
         isGrounded = colliders.Length > 1;
         if (!isGrounded) State = CharState.Jump;
-        if (isGrounded) State = CharState.Run;
         if (State==CharState.Jump)
         {
             _animatorController.Play("JumpTest");
         }
-        if (State==CharState.Run)
-        {
-            _animatorController.Play("RunMan");
-        }
+       
+        
 
     }
      public enum CharState
 {
     Idle,
     Run,
-    Jump
+    Jump,
+    Dead
 }
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -139,6 +179,26 @@ void Jump()
             }
         }
     }
+
+    private Vector2 SmoothInput(float targetH, float targetV)
+{
+    float sensitivity = 10f;
+    float deadZone = 0.001f;
+
+    slidingH = Mathf.MoveTowards(slidingH,
+                  targetH, sensitivity * Time.deltaTime);
+
+    slidingV = Mathf.MoveTowards(slidingV ,
+                  targetV, sensitivity * Time.deltaTime);
+
+    return new Vector2(
+           (Mathf.Abs(slidingH) < deadZone) ? 0f : slidingH ,
+           (Mathf.Abs(slidingV) < deadZone) ? 0f : slidingV );
+}
+public void TakeDamage(int damage)
+       {
+           health -= damage;
+       }
 }
 
 
