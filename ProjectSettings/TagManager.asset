@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Map
   - Bullet
+  - Player1
+  - Player2
+  - Weapon
   layers:
   - Default
   - TransparentFX

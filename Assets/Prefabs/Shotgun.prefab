@@ -129,7 +129,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: 0
   NumberOfBullets: 8
-  bullet: {fileID: 7855068877986177449, guid: 22b8dbbccbd816a48abca62564166b9c, type: 3}
+  bullet: {fileID: 306275647784661212, guid: 87e739611b1396445b79ed8141c69288, type: 3}
   shootpoint: {fileID: 627291649864227805}
   StartTimeBTWShots: 0.5
 --- !u!95 &627291651283970668
