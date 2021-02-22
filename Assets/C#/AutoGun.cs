@@ -13,17 +13,35 @@ public class AutoGun : MonoBehaviour
     void Update()
     {
 
-        if (TimeBTWShots<=0)
+        if (gameObject.CompareTag("Player1"))
         {
-            if (Input.GetKey(KeyCode.V))
+            if (TimeBTWShots <= 0)
             {
-                Instantiate(bullet, shootpoint.position, transform.rotation);
-                TimeBTWShots = StartTimeBTWShots;
+                if (Input.GetKey(KeyCode.V))
+                {
+                        Instantiate(bullet, shootpoint.position,transform.rotation);
+                        TimeBTWShots = StartTimeBTWShots;
+                }
             }
+            else
+            {
+                TimeBTWShots -= Time.deltaTime;
+            } 
         }
-        else
+        else if (gameObject.CompareTag("Player2"))
         {
-            TimeBTWShots -= Time.deltaTime;
+            if (TimeBTWShots <= 0)
+            {
+                if (Input.GetKey(KeyCode.N))
+                {
+                        Instantiate(bullet, shootpoint.position,transform.rotation);
+                        TimeBTWShots = StartTimeBTWShots; 
+                }
+            }
+            else
+            {
+                TimeBTWShots -= Time.deltaTime;
+            } 
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -38,12 +38,11 @@ public class ShotgunBullet : MonoBehaviour
 
         transform.Translate(-X * Time.deltaTime,Y*Time.deltaTime, 0);
     }
-
-    void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other) 
     {
         if (other.CompareTag("Bullet"))
         {
-
+                    
         }
         else
         {
@@ -52,8 +51,12 @@ public class ShotgunBullet : MonoBehaviour
                 other.GetComponent<Enemy>().TakeDamage(damage);
             }
             Destroy(gameObject);
-        }
+        }    
     }
-
-
+    
 }
+
+        
+
+   
+

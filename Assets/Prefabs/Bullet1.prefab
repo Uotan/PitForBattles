@@ -72,7 +72,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_Sprite: {fileID: -1488684479621431429, guid: 0aabb6895a3fe5641966d5fbd596f3b7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -99,14 +99,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedXmin: 18
   speedXmax: 23
-  lifetime: 1
-  distance: 0.7
+  lifetime: 0.5
   damage: 5
-  WhatIsSolid:
-    serializedVersion: 2
-    m_Bits: 256
-  YRangePlus: 1
-  YRangeMinus: 1
+  YRangePlus: 5
+  YRangeMinus: 5
   Y: 0
   X: 0
 --- !u!61 &1413215613761155743
@@ -133,7 +129,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.375, y: 0.1875}
+  m_Size: {x: 0.4, y: 0.1875}
   m_EdgeRadius: 0
 --- !u!50 &1459213999910516201
 Rigidbody2D:
