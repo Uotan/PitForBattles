@@ -118,7 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bullet: {fileID: 136630751608126720, guid: 09521f548dce7544199da05b493d6141, type: 3}
   shootpoint: {fileID: 7677806143531210971}
-  StartTimeBTWShots: 1
+  StartTimeBTWShots: 0.3
 --- !u!1 &2650977005810137280
 GameObject:
   m_ObjectHideFlags: 0
