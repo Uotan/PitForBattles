@@ -21,7 +21,7 @@ public class Player1 : MonoBehaviour
 
 
     //переменные для работы с состояниями и заземлением
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     CharState State;
     private void Start()
     {
@@ -45,8 +45,12 @@ public class Player1 : MonoBehaviour
 
         if (Dead==false)
         {
-    
-
+            CheckGround();
+            walk();
+            if (isGrounded==false)
+            {
+            _animatorController.Play("JumpTest");
+            }
             if (rb.velocity.y==0 && rb.velocity.x==0)
             {
                 State = CharState.Idle;
@@ -55,12 +59,12 @@ public class Player1 : MonoBehaviour
             {
                 _animatorController.Play("IdlePlayer");
             }
+
+
             if(Input.GetKeyDown(KeyCode.W)&&isGrounded)
             {
                 Jump();
             }
-            CheckGround();
-            walk();
             if (Input.GetKeyDown(KeyCode.B))
             {
                 SwitchWeapon();
@@ -76,36 +80,41 @@ void Jump()
          float h = 0f;
          float v = 0f;
          Vector2 smoothedInput;
-            if (Input.GetKey(KeyCode.A))
+         if (Input.GetKey(KeyCode.A))
+        {
+             h = -1f;
+            State = CharState.Run;
+            if (isGrounded==true)
             {
-                h = -1f;
-                State = CharState.Run;
-                _animatorController.Play("RunMan");
+                 _animatorController.Play("RunMan");
+            }
+                
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 h = 1f;
                 State = CharState.Run;
-                _animatorController.Play("RunMan");
+                if (isGrounded==true)
+                {
+                    _animatorController.Play("RunMan");
+                }
             }
-        smoothedInput = SmoothInput(h,v);
+            smoothedInput = SmoothInput(h,v);
 
         
-        float smoothedH = smoothedInput.x;
-        float smoothedV = smoothedInput.y;
+            float smoothedH = smoothedInput.x;
+            float smoothedV = smoothedInput.y;
          
-         
-         rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
-         if (smoothedInput.x<0&&!flip)
-         {
-             Flip();
-         }
-         if (smoothedInput.x > 0 && flip)
-         {
-             Flip();
-         }
-     }
-
+            rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
+            if (smoothedInput.x<0&&!flip)
+            {
+                Flip();
+            }
+            if (smoothedInput.x > 0 && flip)
+            {
+                Flip();
+            }
+        }
      void Flip()
      {
          flip = !flip;
@@ -117,21 +126,14 @@ void Jump()
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.35F);
         isGrounded = colliders.Length > 1;
         if (!isGrounded) State = CharState.Jump;
-        if (State==CharState.Jump)
-        {
-            _animatorController.Play("JumpTest");
-        }
-       
-        
-
     }
      public enum CharState
-{
+    {
     Idle,
     Run,
     Jump,
     Dead
-}
+    }
     private void OnTriggerEnter2D(Collider2D other) 
     {
         for (int i = 0; i < allWeapons.Length; i++)
@@ -182,7 +184,7 @@ void Jump()
         }
     }
 
-    private Vector2 SmoothInput(float targetH, float targetV)
+private Vector2 SmoothInput(float targetH, float targetV)
 {
     float sensitivity = 10f;
     float deadZone = 0.001f;

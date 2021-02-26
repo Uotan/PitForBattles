@@ -4,12 +4,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player2 : MonoBehaviour
-{
+{   
     public bool Dead=false;
     public Rigidbody2D rb;
     public Animator _animatorController;
-    public int _speed;
     public int health;
+    public int _speed;
     private float slidingH;
     private float slidingV;
     public float JumpForce;
@@ -21,7 +21,7 @@ public class Player2 : MonoBehaviour
 
 
     //переменные для работы с состояниями и заземлением
-    private bool isGrounded = false;
+    public bool isGrounded = false;
     CharState State;
     private void Start()
     {
@@ -31,7 +31,7 @@ public class Player2 : MonoBehaviour
 
     void Update()
     {
-            if (health<=0)
+        if (health<=0)
            {
                Dead=true;
                for (int i = 0; i < unlockedWeapons.Count; i++)
@@ -42,29 +42,35 @@ public class Player2 : MonoBehaviour
 
               _animatorController.Play("DeadMan");
            }
-    if (Dead==false)
-    {       
 
-        if (rb.velocity.y==0 && rb.velocity.x==0)
+        if (Dead==false)
         {
-            State = CharState.Idle;
-        }
-        if (State == CharState.Idle)
-        {
-            _animatorController.Play("IdlePlayer");
-        }
-        if(Input.GetKeyDown(KeyCode.UpArrow)&&isGrounded)
-        {
-            Jump();
-        }
-        CheckGround();
-        walk();
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            SwitchWeapon();
+            CheckGround();
+            walk();
+            if (isGrounded==false)
+            {
+            _animatorController.Play("JumpTest");
+            }
+            if (rb.velocity.y==0 && rb.velocity.x==0)
+            {
+                State = CharState.Idle;
+            }
+            if (State == CharState.Idle)
+            {
+                _animatorController.Play("IdlePlayer");
+            }
+
+
+            if(Input.GetKeyDown(KeyCode.UpArrow)&&isGrounded)
+            {
+                Jump();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                SwitchWeapon();
+            }
         }
     }
-}
 void Jump()
 {
     rb.velocity= (Vector2.up * JumpForce);
@@ -74,36 +80,41 @@ void Jump()
          float h = 0f;
          float v = 0f;
          Vector2 smoothedInput;
-            if (Input.GetKey(KeyCode.LeftArrow))
+         if (Input.GetKey(KeyCode.LeftArrow))
+        {
+             h = -1f;
+            State = CharState.Run;
+            if (isGrounded==true)
             {
-                h = -1f;
-                State = CharState.Run;
-                _animatorController.Play("RunMan");
+                 _animatorController.Play("RunMan");
+            }
+                
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
                 h = 1f;
                 State = CharState.Run;
-                _animatorController.Play("RunMan");
+                if (isGrounded==true)
+                {
+                    _animatorController.Play("RunMan");
+                }
             }
-        smoothedInput = SmoothInput(h,v);
+            smoothedInput = SmoothInput(h,v);
 
         
-        float smoothedH = smoothedInput.x;
-        float smoothedV = smoothedInput.y;
+            float smoothedH = smoothedInput.x;
+            float smoothedV = smoothedInput.y;
          
-         
-         rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
-         if (smoothedInput.x<0&&!flip)
-         {
-             Flip();
-         }
-         if (smoothedInput.x > 0 && flip)
-         {
-             Flip();
-         }
-     }
-
+            rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
+            if (smoothedInput.x<0&&!flip)
+            {
+                Flip();
+            }
+            if (smoothedInput.x > 0 && flip)
+            {
+                Flip();
+            }
+        }
      void Flip()
      {
          flip = !flip;
@@ -115,21 +126,14 @@ void Jump()
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.35F);
         isGrounded = colliders.Length > 1;
         if (!isGrounded) State = CharState.Jump;
-        if (State==CharState.Jump)
-        {
-            _animatorController.Play("JumpTest");
-        }
-       
-        
-
     }
      public enum CharState
-{
+    {
     Idle,
     Run,
     Jump,
     Dead
-}
+    }
     private void OnTriggerEnter2D(Collider2D other) 
     {
         for (int i = 0; i < allWeapons.Length; i++)
@@ -180,7 +184,7 @@ void Jump()
         }
     }
 
-    private Vector2 SmoothInput(float targetH, float targetV)
+private Vector2 SmoothInput(float targetH, float targetV)
 {
     float sensitivity = 10f;
     float deadZone = 0.001f;
@@ -195,6 +199,7 @@ void Jump()
            (Mathf.Abs(slidingH) < deadZone) ? 0f : slidingH ,
            (Mathf.Abs(slidingV) < deadZone) ? 0f : slidingV );
 }
+
 public void TakeDamage(int damage)
        {
            health -= damage;
