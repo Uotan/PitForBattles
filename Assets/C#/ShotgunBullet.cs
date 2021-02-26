@@ -16,6 +16,7 @@ public class ShotgunBullet : MonoBehaviour
     public float X;
 
     public Rigidbody2D rb;
+    public Animator HIT;
 
 
     private void Start()
@@ -24,8 +25,7 @@ public class ShotgunBullet : MonoBehaviour
              X = randX;
             float randY = Random.Range(-YRangeMinus, YRangePlus);
              Y = randY; 
-
-           
+             HIT=GetComponent<Animator>();
             rb.velocity =transform.right*-X;
             rb.AddForce ((transform.up*Y*Time.deltaTime));
             
@@ -59,6 +59,7 @@ public class ShotgunBullet : MonoBehaviour
             {
                 other.GetComponent<Player2>().TakeDamage(damage);
             }
+            //HIT.Play("BulletHit");
             Destroy(gameObject);
         }    
     }

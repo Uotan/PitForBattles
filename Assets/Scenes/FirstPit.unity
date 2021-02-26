@@ -317,6 +317,12 @@ PrefabInstance:
       objectReference: {fileID: 1461534524}
     - target: {fileID: 627291651283970674, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7144187466528353430, guid: 56544d0845c2bf04d86ecd5752fce2c8,
+        type: 3}
+    - target: {fileID: 627291651283970674, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
       propertyPath: NumberOfBullets
       value: 10
       objectReference: {fileID: 0}
@@ -453,6 +459,7 @@ MonoBehaviour:
   allWeapons:
   - {fileID: 1383697698}
   - {fileID: 45106130}
+  isGrounded: 0
 --- !u!50 &804364669
 Rigidbody2D:
   serializedVersion: 4
@@ -6182,8 +6189,8 @@ MonoBehaviour:
   Dead: 0
   rb: {fileID: 0}
   _animatorController: {fileID: 0}
-  _speed: 10
   health: 100
+  _speed: 10
   JumpForce: 15
   flip: 1
   unlockedWeapons:
@@ -6191,6 +6198,7 @@ MonoBehaviour:
   allWeapons:
   - {fileID: 1864793967}
   - {fileID: 156383550}
+  isGrounded: 0
 --- !u!1 &1855003531
 GameObject:
   m_ObjectHideFlags: 0
@@ -6334,6 +6342,12 @@ PrefabInstance:
       propertyPath: p2
       value: 
       objectReference: {fileID: 1461534524}
+    - target: {fileID: 627291651283970674, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 7144187466528353430, guid: 56544d0845c2bf04d86ecd5752fce2c8,
+        type: 3}
     - target: {fileID: 627291651283970674, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
       propertyPath: NumberOfBullets
