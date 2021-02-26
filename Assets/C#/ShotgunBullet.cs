@@ -15,15 +15,20 @@ public class ShotgunBullet : MonoBehaviour
     [HideInInspector]
     public float X;
 
+    public Rigidbody2D rb;
 
-    private (float X, float Y) Start()
+
+    private void Start()
     {       
             float randX = Random.Range(speedXmin,speedXmax);
              X = randX;
             float randY = Random.Range(-YRangeMinus, YRangePlus);
              Y = randY; 
-             return (X,Y);
 
+           
+            rb.velocity =transform.right*-X;
+            rb.AddForce ((transform.up*Y*Time.deltaTime));
+            
 
     }
 
@@ -36,7 +41,7 @@ public class ShotgunBullet : MonoBehaviour
         lifetime -= Time.deltaTime;
         
 
-        transform.Translate(-X * Time.deltaTime,Y*Time.deltaTime, 0);
+        
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
