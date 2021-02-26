@@ -6,11 +6,15 @@ class Bullet : MonoBehaviour
         public float lifetime;
         public int damage;
         public int speed;
-//      ==================================================
-//      ==================================================
+
+        public Rigidbody2D rb;
+        private void Start() 
+        {
+            rb.velocity =transform.right*-speed;
+        }
         void Update ()
         {
-            transform.Translate (speed*Time.deltaTime, 0, 0 );
+            
                 if (lifetime <= 0)
                 {
                     Destroy(gameObject);

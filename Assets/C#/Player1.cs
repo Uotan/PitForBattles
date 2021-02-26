@@ -136,8 +136,6 @@ void Jump()
     {
         for (int i = 0; i < allWeapons.Length; i++)
         { 
-             
-
             if (other.CompareTag("Weapon"))
             {
                 unlockedWeapons.Add(allWeapons[i]);
