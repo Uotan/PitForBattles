@@ -100,12 +100,13 @@ MonoBehaviour:
   speedXmin: 25
   speedXmax: 30
   lifetime: 1
-  damage: 5
+  damage: 8
   YRangePlus: 5
   YRangeMinus: 5
   Y: 0
   X: 0
   rb: {fileID: 1459213999910516201}
+  HIT: {fileID: 0}
 --- !u!61 &1413215613761155743
 BoxCollider2D:
   m_ObjectHideFlags: 0
