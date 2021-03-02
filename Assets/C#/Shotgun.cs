@@ -11,7 +11,6 @@ public class Shotgun : MonoBehaviour
     public Transform shootpoint;
 
     private float TimeBTWShots;
-    private float TimeBTWAnimation=0.3f;
     public float StartTimeBTWShots;
     public Animator _animatorController;
 
@@ -39,6 +38,7 @@ public class Shotgun : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.V))
                 {
+                    Gstate=GunState.Shoot;
                     
                     for (int i = 0; i < NumberOfBullets; i++)
                     {
@@ -46,18 +46,16 @@ public class Shotgun : MonoBehaviour
                         Instantiate(bullet, shootpoint.position,transform.rotation);
                         TimeBTWShots = StartTimeBTWShots;
                     }
-                     Gstate=GunState.Shoot;
+                     
                     
                 }
             }
             else
             {
                 TimeBTWShots -= Time.deltaTime;
-                TimeBTWAnimation-=Time.deltaTime;
-                if (TimeBTWAnimation<=0)
+                if (TimeBTWShots<=0)
                 {
                     Gstate=GunState.Idle;
-                    TimeBTWAnimation=0.3f;
                 }
             } 
         }
