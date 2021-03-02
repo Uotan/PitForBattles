@@ -10,6 +10,9 @@ public class Shotgun : MonoBehaviour
     public GameObject bullet;
     public Transform shootpoint;
 
+    public GameObject effect;
+    public Transform effectPoint;
+
     private float TimeBTWShots;
     public float StartTimeBTWShots;
     public Animator _animatorController;
@@ -39,7 +42,7 @@ public class Shotgun : MonoBehaviour
                 if (Input.GetKey(KeyCode.V))
                 {
                     Gstate=GunState.Shoot;
-                    
+                    Instantiate(effect, effectPoint.position, Quaternion.identity);
                     for (int i = 0; i < NumberOfBullets; i++)
                     {
 
@@ -66,7 +69,7 @@ public class Shotgun : MonoBehaviour
                 if (Input.GetKey(KeyCode.K))
                 {
                     Gstate=GunState.Shoot;
-                   
+                   Instantiate(effect, effectPoint.position, Quaternion.identity);
                     for (int i = 0; i < NumberOfBullets; i++)
                     {
 

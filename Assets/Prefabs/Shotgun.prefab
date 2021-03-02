@@ -61,6 +61,7 @@ Transform:
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_Children:
   - {fileID: 627291649864227805}
+  - {fileID: 7556793632442062276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +132,9 @@ MonoBehaviour:
   NumberOfBullets: 10
   bullet: {fileID: 306275647784661212, guid: 87e739611b1396445b79ed8141c69288, type: 3}
   shootpoint: {fileID: 627291649864227805}
-  StartTimeBTWShots: 0.5
+  effect: {fileID: 367380643138802816, guid: 4e89b94de9fc46443b848f36ffeafc34, type: 3}
+  effectPoint: {fileID: 7556793632442062276}
+  StartTimeBTWShots: 1.4
   _animatorController: {fileID: 0}
 --- !u!95 &627291651283970668
 Animator:
@@ -152,3 +155,33 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &7452427127144571367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7556793632442062276}
+  m_Layer: 0
+  m_Name: SleevePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7422848464349959988, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &7556793632442062276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7452427127144571367}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.019, y: 0.054, z: 0}
+  m_LocalScale: {x: 1.4285715, y: 1.4285715, z: 1}
+  m_Children: []
+  m_Father: {fileID: 627291651283970673}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
