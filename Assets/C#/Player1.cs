@@ -8,6 +8,7 @@ public class Player1 : MonoBehaviour
     public bool Dead=false;
     public Rigidbody2D rb;
     public Animator _animatorController;
+    public CapsuleCollider2D CapColl;
     public int health;
     public int _speed;
     private float slidingH;
@@ -34,6 +35,8 @@ public class Player1 : MonoBehaviour
         if (health<=0)
            {
                Dead=true;
+               CapColl.offset = new Vector2(0f, 0.19f);
+                CapColl.size = new Vector2(0.39f, 0.0001f);
                for (int i = 0; i < unlockedWeapons.Count; i++)
                {
                    unlockedWeapons[i].SetActive(false);

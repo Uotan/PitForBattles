@@ -15,16 +15,18 @@ public class GameManager : MonoBehaviour
     {
         while(true)
         {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(1f);
             if (p1.Dead==true||p2.Dead==true)
             {
-                SceneManager.LoadScene(0);
-
+                Invoke("Reload",4f);
             }
             
             
         }
         
+    }
+    private void Reload(){
+        SceneManager.LoadScene(0);
     }
   
     
