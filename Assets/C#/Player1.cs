@@ -20,6 +20,9 @@ public class Player1 : MonoBehaviour
     public List<GameObject> unlockedWeapons;
     public GameObject[] allWeapons;
 
+    public GameObject bloodEffect;
+    public Transform effectPoint;
+
 
     //переменные для работы с состояниями и заземлением
     public bool isGrounded = false;
@@ -203,6 +206,7 @@ private Vector2 SmoothInput(float targetH, float targetV)
 
 public void TakeDamage(int damage)
        {
+           Instantiate(bloodEffect, effectPoint.position, transform.rotation);
            health -= damage;
        }
 }

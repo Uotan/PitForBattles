@@ -305,6 +305,36 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2ffbb1998bf2d4987434cf4f2025e1, type: 3}
+--- !u!1 &690491584
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 690491585}
+  m_Layer: 9
+  m_Name: BloodPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &690491585
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690491584}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 0.40199998, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1461534522}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804364663
 GameObject:
   m_ObjectHideFlags: 0
@@ -409,6 +439,7 @@ Transform:
   m_Children:
   - {fileID: 1383697699}
   - {fileID: 1501452409}
+  - {fileID: 827099761}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -437,6 +468,9 @@ MonoBehaviour:
   allWeapons:
   - {fileID: 1383697698}
   - {fileID: 1501452408}
+  bloodEffect: {fileID: 313340221887701535, guid: bef5aaf3553f69348b4b38121ca2d650,
+    type: 3}
+  effectPoint: {fileID: 827099761}
   isGrounded: 0
 --- !u!50 &804364669
 Rigidbody2D:
@@ -475,6 +509,36 @@ CapsuleCollider2D:
   m_Offset: {x: 0.03125, y: 0.34375}
   m_Size: {x: 0.5, y: 0.6875}
   m_Direction: 0
+--- !u!1 &827099760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 827099761}
+  m_Layer: 9
+  m_Name: BloodPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &827099761
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 827099760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.357, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 804364666}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &857741361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6330,7 +6394,7 @@ PrefabInstance:
     - target: {fileID: 7396582142554911854, guid: 0e916be98dc16f145991d3e64e0d263d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7396582142554911854, guid: 0e916be98dc16f145991d3e64e0d263d,
         type: 3}
@@ -6530,6 +6594,7 @@ Transform:
   m_Children:
   - {fileID: 1864793971}
   - {fileID: 234427966}
+  - {fileID: 690491585}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6558,6 +6623,9 @@ MonoBehaviour:
   allWeapons:
   - {fileID: 1864793967}
   - {fileID: 234427965}
+  bloodEffect: {fileID: 313340221887701535, guid: bef5aaf3553f69348b4b38121ca2d650,
+    type: 3}
+  effectPoint: {fileID: 690491585}
   isGrounded: 0
 --- !u!1 &1501452408 stripped
 GameObject:
