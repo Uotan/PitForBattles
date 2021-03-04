@@ -1,34 +1,28 @@
 fileFormatVersion: 2
-guid: 0aabb6895a3fe5641966d5fbd596f3b7
+guid: 8e1c9ad1c4dfd2e45a1debe6208d5093
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -1262483790231468771
-    second: slice2_0
+      213: -419184918289213597
+    second: DoubleShootGunTest_0
   - first:
-      213: -4341602077520012017
-    second: slice2_1
+      213: 2726261992144494197
+    second: DoubleShootGunTest_1
   - first:
-      213: 4023227141744700054
-    second: slice2_2
+      213: 8274126747619298628
+    second: DoubleShootGunTest_2
   - first:
-      213: 7439487362854146252
-    second: slice2_3
+      213: 2095380762026032285
+    second: DoubleShootGunTest_3
   - first:
-      213: 8850861287373802929
-    second: slice2_4
+      213: 6264897545001491469
+    second: DoubleShootGunTest_4
   - first:
-      213: -6661529470116357174
-    second: slice2_5
+      213: 7508911335847017212
+    second: DoubleShootGunTest_5
   - first:
-      213: -1488684479621431429
-    second: slice2_6
-  - first:
-      213: 6061348346085670354
-    second: slice2_7
-  - first:
-      213: 6026736941991211173
-    second: slice2_8
+      213: 317480509091916443
+    second: DoubleShootGunTest_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -111,18 +105,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Windows Store Apps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -150,190 +132,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: slice2_0
+      name: DoubleShootGunTest_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 176
-        width: 39
+        x: 12
+        y: 234
+        width: 42
         height: 8
       alignment: 9
-      pivot: {x: 0.53846157, y: 0.375}
+      pivot: {x: 0.95238096, y: 0.875}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d1580948ea1ca7ee0800000000000000
-      internalID: -1262483790231468771
+      spriteID: 3679b2aa981ce2af0800000000000000
+      internalID: -419184918289213597
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slice2_1
+      name: DoubleShootGunTest_1
       rect:
         serializedVersion: 2
-        x: 54
-        y: 175
-        width: 59
+        x: 73
+        y: 233
+        width: 53
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9622642, y: 0.6363636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57edb6666d0a5d520800000000000000
+      internalID: 2726261992144494197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: DoubleShootGunTest_2
+      rect:
+        serializedVersion: 2
+        x: 148
+        y: 233
+        width: 51
         height: 9
       alignment: 9
-      pivot: {x: 0.6779661, y: 0.33333334}
+      pivot: {x: 0.9607844, y: 0.7777778}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d525dc9e78fb3c0800000000000000
-      internalID: -4341602077520012017
+      spriteID: 44d0862507a93d270800000000000000
+      internalID: 8274126747619298628
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slice2_2
+      name: DoubleShootGunTest_3
       rect:
         serializedVersion: 2
-        x: 126
-        y: 176
-        width: 59
-        height: 8
-      alignment: 9
-      pivot: {x: 0.6779661, y: 0.375}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 69a276af4cf55d730800000000000000
-      internalID: 4023227141744700054
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slice2_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 154
+        x: 12
+        y: 198
         width: 43
-        height: 8
+        height: 14
       alignment: 9
-      pivot: {x: 0.55813956, y: 0.375}
+      pivot: {x: 0.95348835, y: 0.92857146}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cc0dde5275e5e3760800000000000000
-      internalID: 7439487362854146252
+      spriteID: d9cbfb583b9441d10800000000000000
+      internalID: 2095380762026032285
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slice2_4
+      name: DoubleShootGunTest_4
       rect:
         serializedVersion: 2
-        x: 24
-        y: 129
-        width: 13
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 77
+        y: 198
+        width: 43
+        height: 14
+      alignment: 9
+      pivot: {x: 0.95348835, y: 0.92857146}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1bd0c2e627394da70800000000000000
-      internalID: 8850861287373802929
+      spriteID: d0cd704df1361f650800000000000000
+      internalID: 6264897545001491469
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slice2_5
+      name: DoubleShootGunTest_5
       rect:
         serializedVersion: 2
-        x: 47
-        y: 129
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 139
+        y: 199
+        width: 43
+        height: 13
+      alignment: 9
+      pivot: {x: 0.95348835, y: 0.923077}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: acb1be0cd3e7d83a0800000000000000
-      internalID: -6661529470116357174
+      spriteID: cfab0177313053860800000000000000
+      internalID: 7508911335847017212
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: slice2_6
+      name: DoubleShootGunTest_6
       rect:
         serializedVersion: 2
-        x: 9
-        y: 120
-        width: 12
-        height: 6
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        x: 195
+        y: 199
+        width: 43
+        height: 12
+      alignment: 9
+      pivot: {x: 0.95348835, y: 0.9166667}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b7ff6896a51275be0800000000000000
-      internalID: -1488684479621431429
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slice2_7
-      rect:
-        serializedVersion: 2
-        x: 28
-        y: 118
-        width: 11
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dd7654d43c3e1450800000000000000
-      internalID: 6061348346085670354
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: slice2_8
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 116
-        width: 12
-        height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5a03c16515543a350800000000000000
-      internalID: 6026736941991211173
+      spriteID: b9aa88747dae76400800000000000000
+      internalID: 317480509091916443
       vertices: []
       indices: 
       edges: []
