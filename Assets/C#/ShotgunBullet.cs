@@ -17,15 +17,17 @@ public class ShotgunBullet : MonoBehaviour
 
     public Rigidbody2D rb;
     public Animator HIT;
+    public BoxCollider2D BC2D;
 
 
     private void Start()
     {       
+            HIT=GetComponent<Animator>();
+            BC2D=GetComponent<BoxCollider2D>();
             float randX = Random.Range(speedXmin,speedXmax);
              X = randX;
             float randY = Random.Range(-YRangeMinus, YRangePlus);
              Y = randY; 
-             HIT=GetComponent<Animator>();
             rb.velocity =transform.right*-X;
             rb.AddForce ((transform.up*Y*Time.deltaTime));
             
@@ -54,14 +56,21 @@ public class ShotgunBullet : MonoBehaviour
             if (other.CompareTag("Enemy"))
             {
                 other.GetComponent<Player1>().TakeDamage(damage);
+                
+
             }
             if (other.CompareTag("Enemy1"))
             {
                 other.GetComponent<Player2>().TakeDamage(damage);
             }
-            //HIT.Play("BulletHit");
-            Destroy(gameObject);
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            BC2D.enabled=false;
+            HIT.Play("BulletHit");
+            Invoke("Des",0.2f);
         }    
+    }
+    private void Des(){
+        Destroy(gameObject);
     }
     
 }

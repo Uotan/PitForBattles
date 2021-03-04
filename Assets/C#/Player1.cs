@@ -40,6 +40,7 @@ public class Player1 : MonoBehaviour
                Dead=true;
                CapColl.offset = new Vector2(0f, 0.19f);
                 CapColl.size = new Vector2(0.39f, 0.0001f);
+                rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;
                for (int i = 0; i < unlockedWeapons.Count; i++)
                {
                    unlockedWeapons[i].SetActive(false);
