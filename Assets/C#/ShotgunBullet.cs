@@ -47,7 +47,7 @@ public class ShotgunBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.CompareTag("Bullet"))
+        if (other.CompareTag("Bullet")||other.CompareTag("Weapon")||other.CompareTag("Health"))
         {
                     
         }

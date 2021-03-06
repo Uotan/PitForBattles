@@ -24,9 +24,11 @@ public class Player1 : MonoBehaviour
     public Transform effectPoint;
 
 
-    //переменные для работы с состояниями и заземлением
-    public bool isGrounded = false;
-    CharState State;
+
+    public ForGroundChecker GroundChecker1;
+
+
+    public bool isGrounded;
     private void Start()
     {
         _animatorController = GetComponent<Animator>();
@@ -45,8 +47,6 @@ public class Player1 : MonoBehaviour
                {
                    unlockedWeapons[i].SetActive(false);
                }
-               State = CharState.Dead;
-
               _animatorController.Play("DeadMan");
            }
 
@@ -56,16 +56,13 @@ public class Player1 : MonoBehaviour
             walk();
             if (isGrounded==false)
             {
-            _animatorController.Play("JumpTest");
+                _animatorController.Play("JumpTest");
             }
-            if (rb.velocity.y==0 && rb.velocity.x==0)
-            {
-                State = CharState.Idle;
-            }
-            if (State == CharState.Idle)
+            if (rb.velocity.y==0 && rb.velocity.x==0&&isGrounded==true)
             {
                 _animatorController.Play("IdlePlayer");
             }
+
 
 
             if(Input.GetKeyDown(KeyCode.W)&&isGrounded)
@@ -87,20 +84,17 @@ void Jump()
          float h = 0f;
          float v = 0f;
          Vector2 smoothedInput;
-         if (Input.GetKey(KeyCode.A))
-        {
-             h = -1f;
-            State = CharState.Run;
-            if (isGrounded==true)
+            if (Input.GetKey(KeyCode.A))
             {
-                 _animatorController.Play("RunMan");
-            }
-                
+                 h = -1f;
+                if (isGrounded==true)
+                {
+                    _animatorController.Play("RunMan");
+                } 
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 h = 1f;
-                State = CharState.Run;
                 if (isGrounded==true)
                 {
                     _animatorController.Play("RunMan");
@@ -130,19 +124,22 @@ void Jump()
      }
      private void CheckGround()
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, 0.35F);
-        isGrounded = colliders.Length > 1;
-        if (!isGrounded) State = CharState.Jump;
-    }
-     public enum CharState
-    {
-    Idle,
-    Run,
-    Jump,
-    Dead
+        if (GroundChecker1.isGrounded==false)
+        {
+            isGrounded = false;
+        }
+        else
+        {
+            isGrounded = true;
+        }
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
+        if (other.CompareTag("Health"))
+        {
+            TakeHealth();
+            Destroy(other.gameObject);
+        }
         for (int i = 0; i < allWeapons.Length; i++)
         { 
             if (other.CompareTag("Weapon"))
@@ -209,6 +206,19 @@ public void TakeDamage(int damage)
        {
            Instantiate(bloodEffect, effectPoint.position, transform.rotation);
            health -= damage;
+       }
+       public void TakeHealth(){
+           if (Dead!=true)
+           {
+               if (health<50)
+                {
+                     health+=50;
+                }
+                else
+                {
+                    health=100;
+                }
+           }
        }
 }
 

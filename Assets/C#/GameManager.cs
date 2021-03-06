@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
         
     }
     private void Reload(){
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
   
     
