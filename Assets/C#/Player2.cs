@@ -54,11 +54,19 @@ public class Player2 : MonoBehaviour
         {
             CheckGround();
             walk();
-            if (isGrounded==false)
+             if (isGrounded==false)
             {
                 _animatorController.Play("JumpTest");
             }
-            if (rb.velocity.y==0 && rb.velocity.x==0&&isGrounded==true)
+            else if (rb.velocity.y==0 && rb.velocity.x==0&&isGrounded==true)
+            {
+                _animatorController.Play("IdlePlayer");
+            }
+            else if (isGrounded==true&&rb.velocity.x!=0)
+            {
+                _animatorController.Play("RunMan");
+            }
+            else
             {
                 _animatorController.Play("IdlePlayer");
             }
@@ -89,7 +97,7 @@ void Jump()
                  h = -1f;
                 if (isGrounded==true)
                 {
-                    _animatorController.Play("RunMan");
+                    
                 } 
             }
             else if (Input.GetKey(KeyCode.RightArrow))
@@ -97,7 +105,7 @@ void Jump()
                 h = 1f;
                 if (isGrounded==true)
                 {
-                    _animatorController.Play("RunMan");
+                    
                 }
             }
             smoothedInput = SmoothInput(h,v);

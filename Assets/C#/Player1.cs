@@ -17,6 +17,7 @@ public class Player1 : MonoBehaviour
     public bool flip = true;
     
 
+
     public List<GameObject> unlockedWeapons;
     public GameObject[] allWeapons;
 
@@ -27,6 +28,7 @@ public class Player1 : MonoBehaviour
 
     public ForGroundChecker GroundChecker1;
 
+    public GameObject weapon;
 
     public bool isGrounded;
     private void Start()
@@ -58,7 +60,15 @@ public class Player1 : MonoBehaviour
             {
                 _animatorController.Play("JumpTest");
             }
-            if (rb.velocity.y==0 && rb.velocity.x==0&&isGrounded==true)
+            else if (rb.velocity.y==0 && rb.velocity.x==0&&isGrounded==true)
+            {
+                _animatorController.Play("IdlePlayer");
+            }
+            else if (isGrounded==true&&rb.velocity.x!=0)
+            {
+                _animatorController.Play("RunMan");
+            }
+            else
             {
                 _animatorController.Play("IdlePlayer");
             }
@@ -87,18 +97,12 @@ void Jump()
             if (Input.GetKey(KeyCode.A))
             {
                  h = -1f;
-                if (isGrounded==true)
-                {
-                    _animatorController.Play("RunMan");
-                } 
+                
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 h = 1f;
-                if (isGrounded==true)
-                {
-                    _animatorController.Play("RunMan");
-                }
+                
             }
             smoothedInput = SmoothInput(h,v);
 
@@ -140,31 +144,43 @@ void Jump()
             TakeHealth();
             Destroy(other.gameObject);
         }
-        for (int i = 0; i < allWeapons.Length; i++)
-        { 
-            if (other.CompareTag("Weapon"))
+        
+         if (other.CompareTag("Weapon"))
+         {
+            for (int i = 0; i < allWeapons.Length; i++)
             {
-                unlockedWeapons.Add(allWeapons[i]);
-                for(int k = 0; k < unlockedWeapons.Count; k++)
+                if (other.name==allWeapons[i].name)
                 {
-                    for (int j = 0; j < k; j++)
+
+                    unlockedWeapons.Add(allWeapons[i]);
+                    for (int k = 0; k < unlockedWeapons.Count; k++)
                     {
-                        if (unlockedWeapons[k].name==unlockedWeapons[j].name)
+                        for (int j = 0; j < k; j++)
                         {
-                            unlockedWeapons.Remove(unlockedWeapons[k]);
-                            k=0;
-                            j=0;
+                            if (unlockedWeapons[k].name == unlockedWeapons[j].name)
+                            {
+                                weapon = unlockedWeapons[k].gameObject;
+
+                                GunParametrs weaponScript = weapon.GetComponent<GunParametrs>();
+                                int addCartridges = weaponScript.startCartridges;
+                                weaponScript.cartridges += addCartridges;
+                                unlockedWeapons.Remove(unlockedWeapons[k]);
+                                k = 0;
+                                j = 0;
+                            }
                         }
                     }
-                }  
-                SwitchWeapon();
-                Destroy(other.gameObject);
+
+                }
+                    
+             SwitchWeapon();
+             Destroy(other.gameObject);
                         
             }   
             
                    
             
-        }   
+         }   
     }
     public void SwitchWeapon()
     {
@@ -173,13 +189,17 @@ void Jump()
             if (unlockedWeapons[i].activeInHierarchy)
             {
                 unlockedWeapons[i].SetActive(false);
+
+
                 if (i!=0)
                 {
                     unlockedWeapons[i-1].SetActive(true);
+
                 }
                 else
                 {
                     unlockedWeapons[unlockedWeapons.Count-1].SetActive(true);
+
                 }
                 break;
             }
@@ -202,12 +222,13 @@ private Vector2 SmoothInput(float targetH, float targetV)
            (Mathf.Abs(slidingV) < deadZone) ? 0f : slidingV );
 }
 
-public void TakeDamage(int damage)
+        public void TakeDamage(int damage)
        {
            Instantiate(bloodEffect, effectPoint.position, transform.rotation);
            health -= damage;
        }
-       public void TakeHealth(){
+       public void TakeHealth()
+       {
            if (Dead!=true)
            {
                if (health<50)
