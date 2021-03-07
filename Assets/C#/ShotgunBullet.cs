@@ -15,13 +15,17 @@ public class ShotgunBullet : MonoBehaviour
     [HideInInspector]
     public float X;
 
+    [HideInInspector]
     public Rigidbody2D rb;
+    [HideInInspector]
     public Animator HIT;
+    [HideInInspector]
     public BoxCollider2D BC2D;
 
 
     private void Start()
     {       
+            rb = GetComponent<Rigidbody2D>();
             HIT=GetComponent<Animator>();
             BC2D=GetComponent<BoxCollider2D>();
             float randX = Random.Range(speedXmin,speedXmax);
