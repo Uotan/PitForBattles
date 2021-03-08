@@ -77,7 +77,7 @@ public class GunParametrs : MonoBehaviour
                 {
                     Gstate = GunState.Shoot;
                     Instantiate(effect, effectPoint.position, Quaternion.identity);
-                    cartridges -= 2;
+                    cartridges -= 1;
                     for (int i = 0; i < NumberOfBullets; i++)
                     {
 

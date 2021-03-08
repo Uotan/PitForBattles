@@ -178,7 +178,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startCartridges: 100
-  cartridges: 0
+  cartridges: 100
   offset: 0
   NumberOfBullets: 1
   bullet: {fileID: 2280664424432453322, guid: 8e4bfb4661c37e44aa0e0d160f0bc103, type: 3}

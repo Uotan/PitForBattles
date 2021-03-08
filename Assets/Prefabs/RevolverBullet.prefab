@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedXmin: 40
   speedXmax: 40
-  lifetime: 2
+  lifetime: 1
   damage: 15
   YRangePlus: 0.5
   YRangeMinus: 0.5

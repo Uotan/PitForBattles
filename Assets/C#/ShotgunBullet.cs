@@ -45,9 +45,6 @@ public class ShotgunBullet : MonoBehaviour
             Destroy(gameObject);
         }
         lifetime -= Time.deltaTime;
-        
-
-        
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
@@ -60,8 +57,6 @@ public class ShotgunBullet : MonoBehaviour
             if (other.CompareTag("Enemy"))
             {
                 other.GetComponent<Player1>().TakeDamage(damage);
-                
-
             }
             if (other.CompareTag("Enemy1"))
             {
