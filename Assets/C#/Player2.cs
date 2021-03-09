@@ -142,8 +142,11 @@ void Jump()
         int addCartridges;
         if (other.CompareTag("Health"))
         {
-            TakeHealth();
-            Destroy(other.gameObject);
+            if (health != 100)
+            {
+                TakeHealth();
+                Destroy(other.gameObject);
+            }
         }
         
          if (other.CompareTag("Weapon"))
@@ -232,9 +235,9 @@ private Vector2 SmoothInput(float targetH, float targetV)
        {
            if (Dead!=true)
            {
-               if (health<50)
+               if (health<75)
                 {
-                     health+=50;
+                     health+=25;
                 }
                 else
                 {
