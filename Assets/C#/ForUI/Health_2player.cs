@@ -15,7 +15,7 @@ public class Health_2player : MonoBehaviour
         }
         else
         {
-            text1.text="0";
+            text1.text="dead";
         }
     }
 }

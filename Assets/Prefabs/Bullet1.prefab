@@ -101,7 +101,7 @@ MonoBehaviour:
   speedXmin: 25
   speedXmax: 35
   lifetime: 0.5
-  damage: 8
+  damage: 6
   YRangePlus: 3
   YRangeMinus: 3
   Y: 0
