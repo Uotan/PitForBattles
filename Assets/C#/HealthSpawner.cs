@@ -11,32 +11,43 @@ public class HealthSpawner : MonoBehaviour
     public GameObject health5;
     public GameObject PrefabHealth;
 
-    int Ran;
-    public float timeSpawn = 3f;
-    public float timeLost;
+    private int Ran;
+    public float Time;
     void Start()
     {
-        timeLost = timeSpawn;
+        StartCoroutine(CheckHealth());
     }
 
     // Update is called once per frame
     void Update()
     {
-        timeLost -= Time.deltaTime;
-        if (timeLost<=0)
+
+    }
+    IEnumerator CheckHealth()
+    {
+        while (true)
         {
-            Ran = Random.Range(1, 6);
-            switch (Ran)
+            yield return new WaitForSeconds(Time);
+            var healthObjects = GameObject.FindGameObjectsWithTag("Health");
+            if (healthObjects.Length < 2)
             {
-                case 1: Instantiate(PrefabHealth, health1.transform.position, Quaternion.identity); break;
-                case 2: Instantiate(PrefabHealth, health2.transform.position, Quaternion.identity); break;
-                case 3: Instantiate(PrefabHealth, health3.transform.position, Quaternion.identity); break;
-                case 4: Instantiate(PrefabHealth, health4.transform.position, Quaternion.identity); break;
-                case 5: Instantiate(PrefabHealth, health5.transform.position, Quaternion.identity); break;
-                default:
-                    break;
+                CheckAndSpawn();
             }
-            timeLost = timeSpawn;
+        }
+
+    }
+    void CheckAndSpawn()
+    {
+        Ran = Random.Range(1, 6);
+        switch (Ran)
+        {
+            case 1: Instantiate(PrefabHealth, health1.transform.position, Quaternion.identity); break;
+            case 2: Instantiate(PrefabHealth, health2.transform.position, Quaternion.identity); break;
+            case 3: Instantiate(PrefabHealth, health3.transform.position, Quaternion.identity); break;
+            case 4: Instantiate(PrefabHealth, health4.transform.position, Quaternion.identity); break;
+            case 5: Instantiate(PrefabHealth, health5.transform.position, Quaternion.identity); break;
+            default:
+                break;
         }
     }
 }
