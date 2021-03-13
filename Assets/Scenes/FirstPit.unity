@@ -659,14 +659,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41e43f68354ffb744bd08066fa2f0cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health1: {fileID: 1958227994}
-  health2: {fileID: 142808787}
-  health3: {fileID: 276730426}
-  health4: {fileID: 376936287}
-  health5: {fileID: 1642407791}
+  startSpawnPoint:
+  - {fileID: 1958227994}
+  - {fileID: 142808787}
+  - {fileID: 276730426}
+  - {fileID: 376936287}
+  - {fileID: 1642407791}
+  spawnPoint: []
   PrefabHealth: {fileID: 8102621426479742922, guid: f3a1475e6c1fc9e42b513471256bd8b8,
     type: 3}
-  Time: 10
+  startSpawnTime: 10
+  spawnTime: 0
 --- !u!4 &537399024
 Transform:
   m_ObjectHideFlags: 0
