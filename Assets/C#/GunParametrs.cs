@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class GunParametrs : MonoBehaviour
 {
+    static string p1_shoottPREFS;
+    KeyCode p1_shootBUTT;
+
+    
+
+
+
+
+
     public int startCartridges;
     public int cartridges;
 
@@ -32,6 +41,13 @@ public class GunParametrs : MonoBehaviour
 
     private void Start()
     {
+        //**********************************
+        p1_shoottPREFS = PlayerPrefs.GetString("Set_p1_shoot");
+        p1_shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_shoottPREFS);
+
+        
+        //**********************************
+
         cartridges = startCartridges;
         cartridgesInBarage = startCartridgesInBarage;
         
@@ -65,7 +81,7 @@ public class GunParametrs : MonoBehaviour
             {
                 if (TimeBTWShots <= 0)
                 {
-                    if (Input.GetKey(KeyCode.V) && cartridgesInBarage > 0)
+                    if (Input.GetKey(p1_shootBUTT) && cartridgesInBarage > 0)
                     {
                         Gstate = GunState.Shoot;
                         Instantiate(effect, effectPoint.position, Quaternion.identity);
@@ -76,7 +92,7 @@ public class GunParametrs : MonoBehaviour
                             TimeBTWShots = StartTimeBTWShots;
                         }
                     }
-                    else if (Input.GetKey(KeyCode.V) && cartridgesInBarage <= 0&&cartridges>0)
+                    else if (Input.GetKey(p1_shootBUTT) && cartridgesInBarage <= 0&&cartridges>0)
                     {
                         reloadTime = startReloadTime;
                         Gstate = GunState.Reload;

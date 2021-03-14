@@ -4,7 +4,24 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Player1 : MonoBehaviour
-{   
+{
+
+    //присваивание значений из PlayerPrefs
+    static string p1_LeftPREFS;
+    KeyCode LeftBUTT;
+
+    static string p1_rightPREFS;
+    KeyCode RightBUTT;
+
+    static string p1_JumpPREFS;
+    KeyCode JumpBUTT;
+
+    static string p1_switchPREFS;
+    KeyCode p1_switchtBUTT;
+
+
+
+
     public bool Dead=false;
     public Rigidbody2D rb;
     public Animator _animatorController;
@@ -33,6 +50,22 @@ public class Player1 : MonoBehaviour
     public bool isGrounded;
     private void Start()
     {
+        p1_LeftPREFS = PlayerPrefs.GetString("Set_p1_left");
+        LeftBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_LeftPREFS);
+
+        p1_rightPREFS = PlayerPrefs.GetString("Set_p1_right");
+        RightBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_rightPREFS);
+
+        p1_JumpPREFS = PlayerPrefs.GetString("Set_p1_jump");
+        JumpBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_JumpPREFS);
+
+        p1_switchPREFS = PlayerPrefs.GetString("Set_p1_swith");
+        p1_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_switchPREFS);
+
+
+
+
+
         _animatorController = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -75,11 +108,11 @@ public class Player1 : MonoBehaviour
 
 
 
-            if(Input.GetKeyDown(KeyCode.W)&&isGrounded)
+            if(Input.GetKeyDown(JumpBUTT) &&isGrounded)
             {
                 Jump();
             }
-            if (Input.GetKeyDown(KeyCode.B))
+            if (Input.GetKeyDown(p1_switchtBUTT))
             {
                 SwitchWeapon();
             }
@@ -94,12 +127,12 @@ void Jump()
          float h = 0f;
          float v = 0f;
          Vector2 smoothedInput;
-            if (Input.GetKey(KeyCode.A))
+            if (Input.GetKey(LeftBUTT))
             {
                  h = -1f;
                 
             }
-            else if (Input.GetKey(KeyCode.D))
+            else if (Input.GetKey(RightBUTT))
             {
                 h = 1f;
                 
