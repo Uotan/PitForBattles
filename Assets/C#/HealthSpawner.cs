@@ -40,7 +40,7 @@ public class HealthSpawner : MonoBehaviour
         }
         else if (healthObjects.Length > 2)
         {
-            for (int i = 0; i < 100; i++)
+            for (int i = 0; i < healthObjects.Length; i++)
             {
                 Destroy(healthObjects[i]);
             }
