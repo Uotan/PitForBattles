@@ -10,6 +10,7 @@ public class HealthSpawner : MonoBehaviour
     
 
     public GameObject PrefabHealth;
+    public GameObject[] Stuff;
 
     public float startSpawnTime;
     public float spawnTime;

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class check : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
+public class check : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public bool active = false;
     public string symbol;
@@ -80,6 +80,24 @@ public class check : MonoBehaviour, IPointerUpHandler, IPointerDownHandler
 
     public void OnPointerDown(PointerEventData eventData)
     {
+        
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (active!=true)
+        {
+            teext.color = new Color(0.64f, 0.64f, 0.64f, 1f);
+        }
+        
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (active !=true )
+        {
+            teext.color = new Color(1f, 1f, 1f, 1f);
+        }
         
     }
 }

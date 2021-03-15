@@ -17,8 +17,15 @@ public class GameManager : MonoBehaviour
     public float startTime;
 
     private bool Miganie = true;
+
+
+
+    public Text p1_nameTXT; 
+    public Text p2_nameTXT;
     void Start()
     {
+        p1_nameTXT.text = PlayerPrefs.GetString("Set_p1_name");
+        p2_nameTXT.text = PlayerPrefs.GetString("Set_p2_name");
         startTime = timeMig;
         if (PlayerPrefs.HasKey("p1win"))
         {
@@ -82,11 +89,11 @@ public class GameManager : MonoBehaviour
                 
                 if (p1.Dead == true)
                 {
-                    statusTXT.text = "Player2 won";
+                    statusTXT.text = PlayerPrefs.GetString("Set_p2_name") + " won";
                 }
                 if (p2.Dead == true)
                 {
-                    statusTXT.text = "Player1 won";
+                    statusTXT.text = PlayerPrefs.GetString("Set_p1_name")+" won";
                 }
                 if (p1.Dead == true && p2.Dead == true)
                 {

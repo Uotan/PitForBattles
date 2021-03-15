@@ -7,7 +7,8 @@ public class GunParametrs : MonoBehaviour
     static string p1_shoottPREFS;
     KeyCode p1_shootBUTT;
 
-    
+    static string p2_shoottPREFS;
+    KeyCode p2_shootBUTT;
 
 
 
@@ -45,7 +46,9 @@ public class GunParametrs : MonoBehaviour
         p1_shoottPREFS = PlayerPrefs.GetString("Set_p1_shoot");
         p1_shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_shoottPREFS);
 
-        
+
+        p2_shoottPREFS = PlayerPrefs.GetString("Set_p2_shoot");
+        p2_shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_shoottPREFS);
         //**********************************
 
         cartridges = startCartridges;
@@ -127,7 +130,7 @@ public class GunParametrs : MonoBehaviour
             {
                 if (TimeBTWShots <= 0)
                 {
-                    if (Input.GetKey(KeyCode.K) && cartridgesInBarage > 0)
+                    if (Input.GetKey(p2_shootBUTT) && cartridgesInBarage > 0)
                     {
                         Gstate = GunState.Shoot;
                         Instantiate(effect, effectPoint.position, Quaternion.identity);
@@ -138,7 +141,7 @@ public class GunParametrs : MonoBehaviour
                             TimeBTWShots = StartTimeBTWShots;
                         }
                     }
-                    else if (Input.GetKey(KeyCode.K) && cartridgesInBarage <= 0&&cartridges>0)
+                    else if (Input.GetKey(p2_shootBUTT) && cartridgesInBarage <= 0&&cartridges>0)
                     {
                         reloadTime = startReloadTime;
                         Gstate = GunState.Reload;
