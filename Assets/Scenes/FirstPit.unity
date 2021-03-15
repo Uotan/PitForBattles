@@ -668,12 +668,8 @@ MonoBehaviour:
   spawnPoint: []
   PrefabHealth: {fileID: 8102621426479742922, guid: f3a1475e6c1fc9e42b513471256bd8b8,
     type: 3}
-  Stuff:
-  - {fileID: 2691190979840382755, guid: 7591019da8d5ea346a6a5cb0bf9f200f, type: 3}
-  - {fileID: 8102621426479742922, guid: f3a1475e6c1fc9e42b513471256bd8b8, type: 3}
-  - {fileID: 2134827243302432806, guid: 2adb4c4fb7568de4c96cbdb36743dfbe, type: 3}
-  startSpawnTime: 10
-  spawnTime: 10
+  startSpawnTime: 1
+  spawnTime: 1
 --- !u!4 &537399024
 Transform:
   m_ObjectHideFlags: 0

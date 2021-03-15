@@ -4,13 +4,12 @@ using UnityEngine;
 using System.Linq;
 using System;
 public class HealthSpawner : MonoBehaviour
-{   
+{
     public GameObject[] startSpawnPoint;
     public List<GameObject> spawnPoint;
-    
+
 
     public GameObject PrefabHealth;
-    public GameObject[] Stuff;
 
     public float startSpawnTime;
     public float spawnTime;
@@ -22,24 +21,42 @@ public class HealthSpawner : MonoBehaviour
         {
             spawnPoint.Add(startSpawnPoint[i]);
         }
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (spawnTime<=0)
+        var healthObjects = GameObject.FindGameObjectsWithTag("Health");
+        if (spawnTime <= 0)
         {
-            var healthObjects = GameObject.FindGameObjectsWithTag("Health");
-            if (healthObjects.Length==0)
+           
+            if (healthObjects.Length == 0)
             {
                 CheckHealth();
             }
+            
             spawnTime = startSpawnTime;
+        }
+        else if (healthObjects.Length > 2)
+        {
+            for (int i = 0; i < 100; i++)
+            {
+                Destroy(healthObjects[i]);
+            }
+
         }
         else
         {
-            spawnTime -= UnityEngine.Time.deltaTime;
+            spawnTime -= Time.deltaTime;
+        }
+        if (spawnPoint.Count <= 1)
+        {
+            spawnPoint.Clear();
+            for (int j = 0; j < startSpawnPoint.Length; j++)
+            {
+                spawnPoint.Add(startSpawnPoint[j]);
+            }
         }
     }
     public void CheckHealth()
@@ -47,31 +64,25 @@ public class HealthSpawner : MonoBehaviour
 
 
         var healthObjects = GameObject.FindGameObjectsWithTag("Health");
-        while (healthObjects.Length<2)
+        while (healthObjects.Length < 2)
         {
-            if (spawnPoint.Count <= 1)
-            {
-                for (int j = 0; j < startSpawnPoint.Length; j++)
-                {
-                    spawnPoint.Add(startSpawnPoint[j]);
-                }
-            }
+            
             int lastEnumerable = spawnPoint.Count;
             System.Random random = new System.Random();
             Ran = Enumerable.Range(0, lastEnumerable).OrderBy(i => random.Next()).ToArray();
             for (int i = 0; i < spawnPoint.Count; i++)
-            {   
-                
+            {
+
                 if (Ran[i] == i)
                 {
                     Instantiate(PrefabHealth, spawnPoint[i].transform.position, Quaternion.identity);
                     spawnPoint.RemoveAt(i);
-                    
+
                 }
                 healthObjects = GameObject.FindGameObjectsWithTag("Health");
             }
         }
-             
-        
+
+
     }
 }
