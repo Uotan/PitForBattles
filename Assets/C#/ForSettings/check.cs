@@ -18,6 +18,13 @@ public class check : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IPoi
         if (active==true)
         {
             teext.color = new Color(1f, 0.9681f, 0f, 1f);
+            //if (Input.anyKeyDown)
+            //{
+            //    symbol = Input.inputString;
+            //    teext.color = new Color(1f, 1f, 1f, 1f); 
+            //    teext.text = symbol; 
+            //    active = false;
+            //}
             if (Input.GetKeyDown(KeyCode.A)) { symbol = "A"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.B)) { symbol = "B"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.C)) { symbol = "C"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
@@ -27,7 +34,7 @@ public class check : MonoBehaviour, IPointerUpHandler, IPointerDownHandler, IPoi
             else if (Input.GetKeyDown(KeyCode.G)) { symbol = "G"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.H)) { symbol = "H"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.I)) { symbol = "I"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
-            else if (Input.GetKeyDown(KeyCode.J)) { symbol = "G"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
+            else if (Input.GetKeyDown(KeyCode.J)) { symbol = "J"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.K)) { symbol = "K"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.L)) { symbol = "L"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }
             else if (Input.GetKeyDown(KeyCode.M)) { symbol = "M"; teext.color = new Color(1f, 1f, 1f, 1f); teext.text = symbol; active = false; }

@@ -86,39 +86,31 @@ public class GameManager : MonoBehaviour
             
             if (p1.Dead==true||p2.Dead==true)
             {
-                
-                if (p1.Dead == true)
+                StopAllCoroutines();
+                if (p1.Dead == true && p2.Dead == false)
                 {
+                    p2score += 1;
+                    PlayerPrefs.SetInt("p2win", p2score);
+                    scoreTXT.text = p1score.ToString() + ":" + p2score.ToString();
                     statusTXT.text = PlayerPrefs.GetString("Set_p2_name") + " won";
                 }
-                if (p2.Dead == true)
+                if (p2.Dead == true && p1.Dead == false)
                 {
+                    p1score += 1;
+                    PlayerPrefs.SetInt("p1win", p1score);
+                    scoreTXT.text = p1score.ToString() + ":" + p2score.ToString();
                     statusTXT.text = PlayerPrefs.GetString("Set_p1_name")+" won";
                 }
                 if (p1.Dead == true && p2.Dead == true)
                 {
+                    scoreTXT.text = p1score.ToString() + ":" + p2score.ToString();
                     statusTXT.text = "draw!";
                 }
                 Invoke("Reload",4f);
             }
-            
-            
         }
-        
     }
     private void Reload(){
-        if (p1.Dead == true)
-        {
-            p2score += 1;
-            PlayerPrefs.SetInt("p2win", p2score);
-            scoreTXT.text = p1score.ToString() + ":" + p2score.ToString();
-        }
-        if (p2.Dead == true)
-        {
-            p1score += 1;
-            PlayerPrefs.SetInt("p1win", p1score);
-            scoreTXT.text = p1score.ToString() + ":" + p2score.ToString();
-        }
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
   
