@@ -32,8 +32,8 @@ public class Player1 : MonoBehaviour
     private float slidingV;
     public float JumpForce;
     public bool flip = true;
-    
 
+    private SpriteRenderer _spriter;
 
     public List<GameObject> unlockedWeapons;
     public GameObject[] allWeapons;
@@ -44,6 +44,7 @@ public class Player1 : MonoBehaviour
 
 
     public ForGroundChecker GroundChecker1;
+    public GameObject GroundCheckGO;
 
     public GameObject weapon;
     public GunParametrs weaponScript;
@@ -63,7 +64,7 @@ public class Player1 : MonoBehaviour
         p1_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_switchPREFS);
 
 
-
+        _spriter = GetComponent<SpriteRenderer>();
 
 
         _animatorController = GetComponent<Animator>();
@@ -74,8 +75,9 @@ public class Player1 : MonoBehaviour
     {
         if (health<=0)
            {
-               Dead=true;
-               CapColl.offset = new Vector2(0f, 0.19f);
+                Dead=true;
+            GroundCheckGO.SetActive(false);
+            CapColl.offset = new Vector2(0f, 0.19f);
                 CapColl.size = new Vector2(0.39f, 0.0001f);
                 rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;
                for (int i = 0; i < unlockedWeapons.Count; i++)
@@ -83,7 +85,9 @@ public class Player1 : MonoBehaviour
                    unlockedWeapons[i].SetActive(false);
                }
               _animatorController.Play("DeadMan");
-           }
+            this.gameObject.layer = 12;
+            _spriter.sortingOrder = -1;
+        }
 
         if (Dead==false)
         {

@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
 
     public float timeMig;
     public float startTime;
-
+    public float timeReload;
     private bool Miganie = true;
 
 
@@ -106,7 +106,7 @@ public class GameManager : MonoBehaviour
                     scoreTXT.text = p1score.ToString() + ":" + p2score.ToString();
                     statusTXT.text = "draw!";
                 }
-                Invoke("Reload",4f);
+                Invoke("Reload", timeReload);
             }
         }
     }

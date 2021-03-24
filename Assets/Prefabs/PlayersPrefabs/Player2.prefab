@@ -268,6 +268,7 @@ MonoBehaviour:
     type: 3}
   effectPoint: {fileID: 891822572735551609}
   GroundChecker1: {fileID: 891822573118289009}
+  GroundCheckGO: {fileID: 891822573118289008}
   weapon: {fileID: 0}
   weaponScript: {fileID: 0}
   isGrounded: 0
@@ -278,10 +279,25 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 891822573165146994}
     m_Modifications:
+    - target: {fileID: 5936169581619615459, guid: 72d3214f3de226744b681ea08910f0c3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936169582671316774, guid: 72d3214f3de226744b681ea08910f0c3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5936169583404300303, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
       propertyPath: m_Name
       value: AutoGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 5936169583404300303, guid: 72d3214f3de226744b681ea08910f0c3,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 5936169583404300303, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
@@ -431,6 +447,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436980196765304101, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 436980196765304101, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
+        type: 3}
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
@@ -438,6 +459,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2650977005810137280, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3724646483908124825, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f76090d6a2ffd468282bbf3d9a1b95, type: 3}
@@ -460,6 +491,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 891822573165146994}
     m_Modifications:
+    - target: {fileID: 5249413435719530868, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 5249413435925216524, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
       propertyPath: m_RootOrder
@@ -522,6 +558,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5249413435925216525, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249413435925216525, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -529,6 +570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5249413436735681282, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2ffbb1998bf2d4987434cf4f2025e1, type: 3}

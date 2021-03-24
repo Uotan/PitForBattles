@@ -41,9 +41,10 @@ public class Player2 : MonoBehaviour
     public GameObject bloodEffect;
     public Transform effectPoint;
 
-
+    private SpriteRenderer _spriter;
 
     public ForGroundChecker GroundChecker1;
+    public GameObject GroundCheckGO;
 
     public GameObject weapon;
     public GunParametrs weaponScript;
@@ -63,7 +64,7 @@ public class Player2 : MonoBehaviour
         p2_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_switchPREFS);
 
 
-
+        _spriter = GetComponent<SpriteRenderer>();
 
 
         _animatorController = GetComponent<Animator>();
@@ -75,6 +76,7 @@ public class Player2 : MonoBehaviour
         if (health <= 0)
         {
             Dead = true;
+            GroundCheckGO.SetActive(false);
             CapColl.offset = new Vector2(0f, 0.19f);
             CapColl.size = new Vector2(0.39f, 0.0001f);
             rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
@@ -83,6 +85,8 @@ public class Player2 : MonoBehaviour
                 unlockedWeapons[i].SetActive(false);
             }
             _animatorController.Play("DeadMan");
+            this.gameObject.layer = 12;
+            _spriter.sortingOrder = -1;
         }
 
         if (Dead == false)

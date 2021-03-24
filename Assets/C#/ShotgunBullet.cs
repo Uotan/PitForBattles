@@ -51,27 +51,28 @@ public class ShotgunBullet : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other) 
     {
-        if (other.CompareTag("Bullet")||other.CompareTag("Weapon")||other.CompareTag("Health"))
-        {
+        //if (other.CompareTag("Bullet")||other.CompareTag("Weapon")||other.CompareTag("Health"))
+        //{
                     
-        }
-        else
+        //}
+        //else
+        //{
+            
+        //}
+        if (other.CompareTag("Enemy"))
         {
-            if (other.CompareTag("Enemy"))
-            {
-                other.GetComponent<Player1>().TakeDamage(damage);
-                
+            other.GetComponent<Player1>().TakeDamage(damage);
 
-            }
-            if (other.CompareTag("Enemy1"))
-            {
-                other.GetComponent<Player2>().TakeDamage(damage);
-            }
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            BC2D.enabled=false;
-            HIT.Play("BulletHit");
-            Invoke("Des",0.2f);
-        }    
+
+        }
+        if (other.CompareTag("Enemy1"))
+        {
+            other.GetComponent<Player2>().TakeDamage(damage);
+        }
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        BC2D.enabled = false;
+        HIT.Play("BulletHit");
+        Invoke("Des", 0.2f);
     }
     private void Des(){
         Destroy(gameObject);

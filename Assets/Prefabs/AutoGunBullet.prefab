@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 1572684303117047151}
   - component: {fileID: 1524490213507413872}
   - component: {fileID: 2888932252623994963}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: AutoGunBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
