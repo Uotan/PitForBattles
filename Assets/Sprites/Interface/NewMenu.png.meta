@@ -1,25 +1,28 @@
 fileFormatVersion: 2
-guid: f2440b6e4623c4448b0b01a6acc4291a
+guid: cb2a4caee2a97f04f9431172ee9a52c0
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1404028623067837608
-    second: Logo_0
+      213: -1840215486238780271
+    second: NewMenu_1
   - first:
-      213: 6795467416601567747
-    second: Logo_1
+      213: 4382067380769995241
+    second: NewMenu_2
   - first:
-      213: 6875538535012287733
-    second: Logo_2
+      213: -4805206606637757869
+    second: NewMenu_6
   - first:
-      213: 2381070441135384947
-    second: Logo_3
+      213: 7036186999914236374
+    second: NewMenu_17
   - first:
-      213: -3774021269495190454
-    second: Logo_4
+      213: 7455121404262000153
+    second: NewMenu_25
   - first:
-      213: 6893372319333685202
-    second: Logo_5
+      213: 955284390745247093
+    second: NewMenu_29
+  - first:
+      213: -3642616280580765214
+    second: NewMenu_38
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -102,6 +105,18 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,11 +144,11 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Logo_0
+      name: NewMenu_1
       rect:
         serializedVersion: 2
-        x: 14
-        y: 228
+        x: 85
+        y: 165
         width: 85
         height: 61
       alignment: 0
@@ -143,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a47074089c1c7310800000000000000
-      internalID: 1404028623067837608
+      spriteID: 1949090e3cd3676e0800000000000000
+      internalID: -1840215486238780271
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo_1
+      name: NewMenu_2
       rect:
         serializedVersion: 2
-        x: 153
-        y: 228
-        width: 85
-        height: 61
+        x: 112
+        y: 139
+        width: 38
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -164,20 +179,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 30227498c995e4e50800000000000000
-      internalID: 6795467416601567747
+      spriteID: 9e93f9cc01b30dc30800000000000000
+      internalID: 4382067380769995241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo_2
+      name: NewMenu_6
       rect:
         serializedVersion: 2
-        x: 15
-        y: 131
-        width: 85
-        height: 61
+        x: 72
+        y: 123
+        width: 112
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -185,20 +200,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f4cae29ed1da6f50800000000000000
-      internalID: 6875538535012287733
+      spriteID: 35a0ff2ec0a705db0800000000000000
+      internalID: -4805206606637757869
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo_3
+      name: NewMenu_17
       rect:
         serializedVersion: 2
-        x: 155
-        y: 133
-        width: 85
-        height: 61
+        x: 91
+        y: 107
+        width: 78
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -206,20 +221,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 379ae0563f24b0120800000000000000
-      internalID: 2381070441135384947
+      spriteID: 6d90c1f0cce85a160800000000000000
+      internalID: 7036186999914236374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo_4
+      name: NewMenu_25
       rect:
         serializedVersion: 2
-        x: 16
-        y: 35
-        width: 85
-        height: 61
+        x: 112
+        y: 91
+        width: 34
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -227,20 +242,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4c68f8a6abff9bc0800000000000000
-      internalID: -3774021269495190454
+      spriteID: 916a2721b69e57760800000000000000
+      internalID: 7455121404262000153
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo_5
+      name: NewMenu_29
       rect:
         serializedVersion: 2
-        x: 152
-        y: 37
-        width: 85
-        height: 61
+        x: 75
+        y: 76
+        width: 104
+        height: 10
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -248,8 +263,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2d7156e0a9d2aaf50800000000000000
-      internalID: 6893372319333685202
+      spriteID: 57d88d1971ad14d00800000000000000
+      internalID: 955284390745247093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: NewMenu_38
+      rect:
+        serializedVersion: 2
+        x: 69
+        y: 60
+        width: 116
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e9cdeecac3d27dc0800000000000000
+      internalID: -3642616280580765214
       vertices: []
       indices: 
       edges: []
