@@ -120,7 +120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 891822573165147007}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.76, y: -0.62, z: 0.02704045}
+  m_LocalPosition: {x: 10.04, y: 3.91, z: 0.02704045}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 5667972780832232542}
@@ -146,6 +146,7 @@ SpriteRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -251,8 +252,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dead: 0
-  rb: {fileID: 0}
-  _animatorController: {fileID: 891822573165146992}
+  rb: {fileID: 891822573165146997}
+  _animatorController: {fileID: 0}
   CapColl: {fileID: 891822573165146998}
   health: 100
   _speed: 8
@@ -393,12 +394,12 @@ PrefabInstance:
     - target: {fileID: 436980196765304100, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.3217
+      value: 0.262
       objectReference: {fileID: 0}
     - target: {fileID: 436980196765304100, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.334
+      value: 0.434
       objectReference: {fileID: 0}
     - target: {fileID: 436980196765304100, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
