@@ -1,0 +1,564 @@
+fileFormatVersion: 2
+guid: 3e2163739463f704b8dd1eaa4bbb2123
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -347120347184649463
+    second: AutoGun_0
+  - first:
+      213: -5830611205562344354
+    second: AutoGun_1
+  - first:
+      213: 5751136546524113654
+    second: AutoGun_2
+  - first:
+      213: -7742875572938569589
+    second: AutoGun_3
+  - first:
+      213: 7093140242867842579
+    second: AutoGun_4
+  - first:
+      213: 7904672497155022040
+    second: AutoGun_5
+  - first:
+      213: 8312154600458777714
+    second: AutoGun_6
+  - first:
+      213: -538264799449596960
+    second: AutoGun_7
+  - first:
+      213: -4155963495497925965
+    second: AutoGun_8
+  - first:
+      213: -9215343848858147799
+    second: AutoGun_9
+  - first:
+      213: -8423557377992331764
+    second: AutoGun_10
+  - first:
+      213: -1304473801789338413
+    second: AutoGun_11
+  - first:
+      213: -9199688262439340968
+    second: AutoGun_12
+  - first:
+      213: -6653456079542942534
+    second: AutoGun_13
+  - first:
+      213: -3892856382513584160
+    second: AutoGun_14
+  - first:
+      213: 4807252643739540868
+    second: AutoGun_15
+  - first:
+      213: 851417741331084166
+    second: AutoGun_16
+  - first:
+      213: 2654389332140594399
+    second: AutoGun_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AutoGun_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 226
+        width: 34
+        height: 10
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90bafb322e7ce2bf0800000000000000
+      internalID: -347120347184649463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_1
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 226
+        width: 44
+        height: 12
+      alignment: 9
+      pivot: {x: 0.9545455, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c5b0d1002851fa0800000000000000
+      internalID: -5830611205562344354
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_2
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 226
+        width: 42
+        height: 12
+      alignment: 9
+      pivot: {x: 0.95238096, y: 0.75}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa265ed73420df40800000000000000
+      internalID: 5751136546524113654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_3
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 226
+        width: 41
+        height: 10
+      alignment: 9
+      pivot: {x: 0.9512195, y: 0.90000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8882fe90b7cb8490800000000000000
+      internalID: -7742875572938569589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_4
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 226
+        width: 34
+        height: 10
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e6a264875ef6260800000000000000
+      internalID: 7093140242867842579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_5
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 194
+        width: 34
+        height: 10
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc99b261c903bd60800000000000000
+      internalID: 7904672497155022040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_6
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 193
+        width: 34
+        height: 12
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.8333334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2747976c194ba5370800000000000000
+      internalID: 8312154600458777714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_7
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 192
+        width: 34
+        height: 12
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.9166667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ebb5b94403b788f0800000000000000
+      internalID: -538264799449596960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_8
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 191
+        width: 34
+        height: 12
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.9166667}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bafa57583d0356c0800000000000000
+      internalID: -4155963495497925965
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_9
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 191
+        width: 34
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924aabd28958c1080800000000000000
+      internalID: -9215343848858147799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_10
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 159
+        width: 34
+        height: 16
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.9375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0e65a3d133891b80800000000000000
+      internalID: -8423557377992331764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_11
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 161
+        width: 34
+        height: 13
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc0b891df395ede0800000000000000
+      internalID: -1304473801789338413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_12
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 164
+        width: 34
+        height: 10
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90000004}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 854f8f07444245080800000000000000
+      internalID: -9199688262439340968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_13
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 164
+        width: 34
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab40e2a72fc2aa3a0800000000000000
+      internalID: -6653456079542942534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_14
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 165
+        width: 34
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e76aaecebbc9f9c0800000000000000
+      internalID: -3892856382513584160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_15
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 124
+        width: 34
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48d17af3fcac6b240800000000000000
+      internalID: 4807252643739540868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_16
+      rect:
+        serializedVersion: 2
+        x: 60
+        y: 122
+        width: 34
+        height: 13
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.923077}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 683318bbce7d0db00800000000000000
+      internalID: 851417741331084166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AutoGun_17
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 127
+        width: 34
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9411765, y: 0.90909094}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd493d5b80946d420800000000000000
+      internalID: 2654389332140594399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
