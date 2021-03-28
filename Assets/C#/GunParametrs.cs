@@ -10,7 +10,8 @@ public class GunParametrs : MonoBehaviour
     static string p2_shoottPREFS;
     KeyCode p2_shootBUTT;
 
-
+    //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
+    public ReloadChecker isReloadedscript;
 
 
 
@@ -71,10 +72,14 @@ public class GunParametrs : MonoBehaviour
         }
         else if (Gstate == GunState.Reload)
         {
+            //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
+            isReloadedscript.isReload = true;
             _animatorController.Play("ReloadGun");
         }
         else
         {
+            //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
+            isReloadedscript.isReload = false;
             _animatorController.Play("IdleGun");
         }
 

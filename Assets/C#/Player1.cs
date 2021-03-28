@@ -19,7 +19,7 @@ public class Player1 : MonoBehaviour
     static string p1_switchPREFS;
     KeyCode p1_switchtBUTT;
 
-
+    public ReloadChecker _ReloadScript;
 
 
     public bool Dead=false;
@@ -51,6 +51,8 @@ public class Player1 : MonoBehaviour
     public bool isGrounded;
     private void Start()
     {
+        _ReloadScript = GetComponent<ReloadChecker>();
+
         p1_LeftPREFS = PlayerPrefs.GetString("Set_p1_left");
         LeftBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_LeftPREFS);
 
@@ -116,7 +118,7 @@ public class Player1 : MonoBehaviour
             {
                 Jump();
             }
-            if (Input.GetKeyDown(p1_switchtBUTT))
+            if (Input.GetKeyDown(p1_switchtBUTT)&&_ReloadScript.isReload==false)
             {
                 SwitchWeapon();
             }
@@ -186,43 +188,40 @@ void Jump()
             }
             
         }
-        
-         if (other.CompareTag("Weapon"))
-         {
+        if (other.CompareTag("AutoGun")|| other.CompareTag("Shotgun"))
+        {
             for (int i = 0; i < allWeapons.Length; i++)
             {
-                    if (other.name==allWeapons[i].name)
-                    {  
-                        unlockedWeapons.Add(allWeapons[i]);
-                        allWeapons[i].SetActive(true);
-                        for (int k = 0; k < unlockedWeapons.Count; k++)
-                        {
-                            if (unlockedWeapons[k].activeInHierarchy&&unlockedWeapons[k].name!=other.name)
-                            {
-                                unlockedWeapons[k].SetActive(false);
-                                break;
-                            }
-                        }
-                    }          
-            }   
+                if (other.tag == allWeapons[i].name)
+                {
+                    unlockedWeapons.Add(allWeapons[i]);
+                    allWeapons[i].SetActive(true);
                     for (int k = 0; k < unlockedWeapons.Count; k++)
                     {
-                        for (int j = k+1; j < unlockedWeapons.Count; j++)
+                        if (unlockedWeapons[k].activeInHierarchy && unlockedWeapons[k].name != other.tag)
                         {
-                            if (unlockedWeapons[k].name == unlockedWeapons[j].name)
-                            {   
-                                weapon = unlockedWeapons[k].gameObject;
-                                weaponScript = weapon.GetComponent<GunParametrs>();
-                                addCartridges = weaponScript.startCartridges;
-                                weaponScript.cartridges += addCartridges;
-                                unlockedWeapons.Remove(unlockedWeapons[j]);
-                            }
+                            unlockedWeapons[k].SetActive(false);
+                            break;
                         }
                     }
+                }
+            }
+            for (int k = 0; k < unlockedWeapons.Count; k++)
+            {
+                for (int j = k + 1; j < unlockedWeapons.Count; j++)
+                {
+                    if (unlockedWeapons[k].name == unlockedWeapons[j].name)
+                    {
+                        weapon = unlockedWeapons[k].gameObject;
+                        weaponScript = weapon.GetComponent<GunParametrs>();
+                        addCartridges = weaponScript.startCartridges;
+                        weaponScript.cartridges += addCartridges;
+                        unlockedWeapons.Remove(unlockedWeapons[j]);
+                    }
+                }
+            }
             Destroy(other.gameObject);
-                   
-            
-        }   
+        }  
     }
     public void SwitchWeapon()
     {

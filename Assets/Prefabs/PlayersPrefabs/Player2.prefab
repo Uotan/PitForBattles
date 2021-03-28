@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 891822573165146998}
   - component: {fileID: 6631804470223888537}
   - component: {fileID: 2146523688249650018}
+  - component: {fileID: 100534211}
   m_Layer: 13
   m_Name: Player2
   m_TagString: Enemy1
@@ -232,6 +233,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8f2af5d2c74f4b4c9989ec0d334973e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ReloadScript: {fileID: 0}
   Dead: 0
   rb: {fileID: 891822573165146997}
   _animatorController: {fileID: 0}
@@ -273,6 +275,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &100534211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891822573165147007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27675b6182249c74298384e8a4a80907, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isReload: 0
 --- !u!1001 &141073773925203548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -371,6 +386,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6448820522666452760, guid: 2423182e3106e6f4b9263429c007453a,
         type: 3}
+    - target: {fileID: 5936169583404300305, guid: 72d3214f3de226744b681ea08910f0c3,
+        type: 3}
+      propertyPath: isReloadedscript
+      value: 
+      objectReference: {fileID: 100534211}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d3214f3de226744b681ea08910f0c3, type: 3}
 --- !u!1 &6022635488985597523 stripped
@@ -473,6 +493,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3219173986969655123, guid: 511db314e018f2d448a510aaa43e01bb,
         type: 3}
+    - target: {fileID: 1260164000747248756, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
+        type: 3}
+      propertyPath: isReloadedscript
+      value: 
+      objectReference: {fileID: 100534211}
     - target: {fileID: 2650977005810137280, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
       propertyPath: m_Layer
@@ -590,6 +615,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3429565034229744504, guid: 50ff210ffcbd39d4f9500d52b5e9ac5b,
         type: 3}
+    - target: {fileID: 5249413435925216526, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
+      propertyPath: isReloadedscript
+      value: 
+      objectReference: {fileID: 100534211}
     - target: {fileID: 5249413436735681282, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
       propertyPath: m_Layer

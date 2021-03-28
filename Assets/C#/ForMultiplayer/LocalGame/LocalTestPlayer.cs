@@ -1,26 +1,14 @@
-using System;
+using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Player2 : MonoBehaviour
+public class LocalTestPlayer : NetworkBehaviour
 {
 
-    //присваивание значений из PlayerPrefs
-    static string p2_LeftPREFS;
-    KeyCode LeftBUTT;
-
-    static string p2_rightPREFS;
-    KeyCode RightBUTT;
-
-    static string p2_JumpPREFS;
-    KeyCode JumpBUTT;
-
-    static string p2_switchPREFS;
-    KeyCode p2_switchtBUTT;
-
-
     public ReloadChecker _ReloadScript;
+
 
     public bool Dead = false;
     public Rigidbody2D rb;
@@ -33,7 +21,7 @@ public class Player2 : MonoBehaviour
     public float JumpForce;
     public bool flip = true;
 
-
+    private SpriteRenderer _spriter;
 
     public List<GameObject> unlockedWeapons;
     public GameObject[] allWeapons;
@@ -41,7 +29,7 @@ public class Player2 : MonoBehaviour
     public GameObject bloodEffect;
     public Transform effectPoint;
 
-    private SpriteRenderer _spriter;
+
 
     public ForGroundChecker GroundChecker1;
     public GameObject GroundCheckGO;
@@ -49,23 +37,13 @@ public class Player2 : MonoBehaviour
     public GameObject weapon;
     public GunParametrs weaponScript;
     public bool isGrounded;
+
+
+
+    [Client]
     private void Start()
     {
         _ReloadScript = GetComponent<ReloadChecker>();
-
-
-        p2_LeftPREFS = PlayerPrefs.GetString("Set_p2_left");
-        LeftBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_LeftPREFS);
-
-        p2_rightPREFS = PlayerPrefs.GetString("Set_p2_right");
-        RightBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_rightPREFS);
-
-        p2_JumpPREFS = PlayerPrefs.GetString("Set_p2_jump");
-        JumpBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_JumpPREFS);
-
-        p2_switchPREFS = PlayerPrefs.GetString("Set_p2_swith");
-        p2_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_switchPREFS);
-
 
         _spriter = GetComponent<SpriteRenderer>();
 
@@ -76,54 +54,62 @@ public class Player2 : MonoBehaviour
 
     void Update()
     {
-        if (health <= 0)
+        if (isLocalPlayer)
         {
-            Dead = true;
-            GroundCheckGO.SetActive(false);
-            CapColl.offset = new Vector2(0f, 0.19f);
-            CapColl.size = new Vector2(0.39f, 0.0001f);
-            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
-            for (int i = 0; i < unlockedWeapons.Count; i++)
+            if (!hasAuthority)
             {
-                unlockedWeapons[i].SetActive(false);
+                return;
             }
-            _animatorController.Play("DeadMan");
-            this.gameObject.layer = 12;
-            _spriter.sortingOrder = -1;
+            if (health <= 0)
+            {
+                Dead = true;
+                GroundCheckGO.SetActive(false);
+                CapColl.offset = new Vector2(0f, 0.19f);
+                CapColl.size = new Vector2(0.39f, 0.0001f);
+                rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+                for (int i = 0; i < unlockedWeapons.Count; i++)
+                {
+                    unlockedWeapons[i].SetActive(false);
+                }
+                _animatorController.Play("DeadMan");
+                this.gameObject.layer = 12;
+                _spriter.sortingOrder = -1;
+            }
+
+            if (Dead == false)
+            {
+                CheckGround();
+                walk();
+                if (isGrounded == false)
+                {
+                    _animatorController.Play("JumpTest");
+                }
+                else if (rb.velocity.y == 0 && rb.velocity.x == 0 && isGrounded == true)
+                {
+                    _animatorController.Play("IdlePlayer");
+                }
+                else if (isGrounded == true && rb.velocity.x != 0)
+                {
+                    _animatorController.Play("RunMan");
+                }
+                else
+                {
+                    _animatorController.Play("IdlePlayer");
+                }
+
+
+
+                if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+                {
+                    Jump();
+                }
+                if (Input.GetKeyDown(KeyCode.B) && _ReloadScript.isReload == false)
+                {
+                    SwitchWeapon();
+                }
+            }
         }
-
-        if (Dead == false)
-        {
-            CheckGround();
-            walk();
-            if (isGrounded == false)
-            {
-                _animatorController.Play("JumpTest");
-            }
-            else if (rb.velocity.y == 0 && rb.velocity.x == 0 && isGrounded == true)
-            {
-                _animatorController.Play("IdlePlayer");
-            }
-            else if (isGrounded == true && rb.velocity.x != 0)
-            {
-                _animatorController.Play("RunMan");
-            }
-            else
-            {
-                _animatorController.Play("IdlePlayer");
-            }
-
-
-
-            if (Input.GetKeyDown(JumpBUTT) && isGrounded)
-            {
-                Jump();
-            }
-            if (Input.GetKeyDown(p2_switchtBUTT)&&_ReloadScript.isReload==false)
-            {
-                SwitchWeapon();
-            }
-        }
+        
     }
     void Jump()
     {
@@ -134,12 +120,12 @@ public class Player2 : MonoBehaviour
         float h = 0f;
         float v = 0f;
         Vector2 smoothedInput;
-        if (Input.GetKey(LeftBUTT))
+        if (Input.GetKey(KeyCode.A))
         {
             h = -1f;
 
         }
-        else if (Input.GetKey(RightBUTT))
+        else if (Input.GetKey(KeyCode.D))
         {
             h = 1f;
 
@@ -284,6 +270,3 @@ public class Player2 : MonoBehaviour
         }
     }
 }
-
-
-

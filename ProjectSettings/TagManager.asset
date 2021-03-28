@@ -12,6 +12,8 @@ TagManager:
   - Weapon
   - Enemy1
   - Health
+  - AutoGun
+  - Shotgun
   layers:
   - Default
   - TransparentFX
@@ -28,8 +30,8 @@ TagManager:
   - PlayerBody
   - Player2
   - Bullet2
-  - 
-  - 
+  - OnlinePlayer
+  - OnlineBullet
   - 
   - 
   - 
