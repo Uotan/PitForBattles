@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891822572735551609}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: BloodPoint
   m_TagString: Untagged
   m_Icon: {fileID: 7866945982896999795, guid: 0000000000000000d000000000000000, type: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 891822573118289011}
   - component: {fileID: 891822573118289010}
   - component: {fileID: 891822573118289009}
-  m_Layer: 9
+  m_Layer: 13
   m_Name: CheckGronder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,11 +101,11 @@ GameObject:
   m_Component:
   - component: {fileID: 891822573165146994}
   - component: {fileID: 891822573165146993}
-  - component: {fileID: 891822573165146992}
   - component: {fileID: 891822573165146997}
   - component: {fileID: 891822573165146998}
   - component: {fileID: 6631804470223888537}
-  m_Layer: 9
+  - component: {fileID: 2146523688249650018}
+  m_Layer: 13
   m_Name: Player2
   m_TagString: Enemy1
   m_Icon: {fileID: 0}
@@ -171,7 +171,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6654634127439770934, guid: a826b2d6de0354b4b81bd75457115926,
+  m_Sprite: {fileID: 6374758704403545544, guid: 56c7726867cee4244854647766e6c9b0,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -183,25 +183,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &891822573165146992
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 891822573165147007}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e88dba0c321d26b4e8e27f6fe9e1ca7a, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &891822573165146997
 Rigidbody2D:
   serializedVersion: 4
@@ -273,6 +254,25 @@ MonoBehaviour:
   weapon: {fileID: 0}
   weaponScript: {fileID: 0}
   isGrounded: 0
+--- !u!95 &2146523688249650018
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891822573165147007}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 24028172fd5cdfc4dbf388bc09a17035, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &141073773925203548
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -283,12 +283,12 @@ PrefabInstance:
     - target: {fileID: 5936169581619615459, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5936169582671316774, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5936169583404300303, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
@@ -298,7 +298,7 @@ PrefabInstance:
     - target: {fileID: 5936169583404300303, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5936169583404300303, guid: 72d3214f3de226744b681ea08910f0c3,
         type: 3}
@@ -365,6 +365,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5936169583404300305, guid: 72d3214f3de226744b681ea08910f0c3,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 6448820522666452760, guid: 2423182e3106e6f4b9263429c007453a,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72d3214f3de226744b681ea08910f0c3, type: 3}
 --- !u!1 &6022635488985597523 stripped
@@ -449,7 +455,7 @@ PrefabInstance:
     - target: {fileID: 436980196765304101, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 436980196765304101, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
@@ -461,15 +467,21 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 1260164000747248756, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3219173986969655123, guid: 511db314e018f2d448a510aaa43e01bb,
+        type: 3}
     - target: {fileID: 2650977005810137280, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3724646483908124825, guid: a5f76090d6a2ffd468282bbf3d9a1b95,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5f76090d6a2ffd468282bbf3d9a1b95, type: 3}
@@ -495,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 5249413435719530868, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5249413435925216524, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
@@ -560,7 +572,7 @@ PrefabInstance:
     - target: {fileID: 5249413435925216525, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5249413435925216525, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
@@ -572,10 +584,16 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 5249413435925216526, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
+        type: 3}
+      propertyPath: bullet
+      value: 
+      objectReference: {fileID: 3429565034229744504, guid: 50ff210ffcbd39d4f9500d52b5e9ac5b,
+        type: 3}
     - target: {fileID: 5249413436735681282, guid: ca2ffbb1998bf2d4987434cf4f2025e1,
         type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2ffbb1998bf2d4987434cf4f2025e1, type: 3}

@@ -22,12 +22,12 @@ TagManager:
   - 
   - 
   - Solid
-  - Player
+  - Player1
   - Items
-  - Bullet
+  - Bullet1
   - PlayerBody
-  - 
-  - 
+  - Player2
+  - Bullet2
   - 
   - 
   - 
