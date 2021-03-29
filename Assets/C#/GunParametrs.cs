@@ -39,7 +39,6 @@ public class GunParametrs : MonoBehaviour
     {
         cartridges = startCartridges;
         cartridgesInBarage = startCartridgesInBarage;
-        
         _animatorController = GetComponent<Animator>();
     }
     public void Shoot()
@@ -49,6 +48,7 @@ public class GunParametrs : MonoBehaviour
             if (cartridgesInBarage > 0)
             {
                 Gstate = GunState.Shoot;
+                _animatorController.Play("ShootingGun");
                 Instantiate(effect, effectPoint.position, Quaternion.identity);
                 cartridgesInBarage -= 1;
                 for (int i = 0; i < NumberOfBullets; i++)
@@ -62,9 +62,7 @@ public class GunParametrs : MonoBehaviour
                 reloadTime = startReloadTime;
                 Gstate = GunState.Reload;
                 Debug.Log("Reload");
-
                 Reload();
-
             }
         }
     }
@@ -77,10 +75,10 @@ public class GunParametrs : MonoBehaviour
             Debug.Log("Reload");
             Reload();
         }
-        if (Gstate == GunState.Shoot)
-        {
-            _animatorController.Play("ShootingGun");
-        }
+        //if (Gstate == GunState.Shoot)
+        //{
+        //    _animatorController.Play("ShootingGun");
+        //}
         else if (Gstate == GunState.Reload)
         {
             //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
