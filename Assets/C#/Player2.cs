@@ -17,8 +17,10 @@ public class Player2 : MonoBehaviour
     KeyCode JumpBUTT;
 
     static string p2_switchPREFS;
-    KeyCode p2_switchtBUTT;
+    KeyCode switchtBUTT;
 
+    static string p2_shootPREFS;
+    KeyCode shootBUTT;
 
     public ReloadChecker _ReloadScript;
 
@@ -64,8 +66,10 @@ public class Player2 : MonoBehaviour
         JumpBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_JumpPREFS);
 
         p2_switchPREFS = PlayerPrefs.GetString("Set_p2_swith");
-        p2_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_switchPREFS);
+        switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_switchPREFS);
 
+        p2_shootPREFS = PlayerPrefs.GetString("Set_p2_shoot");
+        shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_shootPREFS);
 
         _spriter = GetComponent<SpriteRenderer>();
 
@@ -112,16 +116,31 @@ public class Player2 : MonoBehaviour
             {
                 _animatorController.Play("IdlePlayer");
             }
-
+            if (Input.GetKey(shootBUTT))
+            {
+                Shot();
+            }
 
 
             if (Input.GetKeyDown(JumpBUTT) && isGrounded)
             {
                 Jump();
             }
-            if (Input.GetKeyDown(p2_switchtBUTT)&&_ReloadScript.isReload==false)
+            if (Input.GetKeyDown(switchtBUTT)&&_ReloadScript.isReload==false)
             {
                 SwitchWeapon();
+            }
+        }
+    }
+    void Shot()
+    {
+        for (int k = 0; k < unlockedWeapons.Count; k++)
+        {
+            if (unlockedWeapons[k].activeInHierarchy)
+            {
+                weapon = unlockedWeapons[k].gameObject;
+                weaponScript = weapon.GetComponent<GunParametrs>();
+                weaponScript.Shoot();
             }
         }
     }

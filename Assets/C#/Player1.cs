@@ -17,12 +17,15 @@ public class Player1 : MonoBehaviour
     KeyCode JumpBUTT;
 
     static string p1_switchPREFS;
-    KeyCode p1_switchtBUTT;
+    KeyCode switchtBUTT;
+
+    static string p1_shootPREFS;
+    KeyCode shootBUTT;
 
     public ReloadChecker _ReloadScript;
 
 
-    public bool Dead=false;
+    public bool Dead = false;
     public Rigidbody2D rb;
     public Animator _animatorController;
     public CapsuleCollider2D CapColl;
@@ -63,8 +66,10 @@ public class Player1 : MonoBehaviour
         JumpBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_JumpPREFS);
 
         p1_switchPREFS = PlayerPrefs.GetString("Set_p1_swith");
-        p1_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_switchPREFS);
+        switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_switchPREFS);
 
+        p1_shootPREFS = PlayerPrefs.GetString("Set_p1_shoot");
+        shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_shootPREFS);
 
         _spriter = GetComponent<SpriteRenderer>();
 
@@ -75,35 +80,36 @@ public class Player1 : MonoBehaviour
 
     void Update()
     {
-        if (health<=0)
-           {
-                Dead=true;
+        
+        if (health <= 0)
+        {
+            Dead = true;
             GroundCheckGO.SetActive(false);
             CapColl.offset = new Vector2(0f, 0.19f);
-                CapColl.size = new Vector2(0.39f, 0.0001f);
-                rb.constraints = RigidbodyConstraints2D.FreezePositionX|RigidbodyConstraints2D.FreezeRotation;
-               for (int i = 0; i < unlockedWeapons.Count; i++)
-               {
-                   unlockedWeapons[i].SetActive(false);
-               }
-              _animatorController.Play("DeadMan");
+            CapColl.size = new Vector2(0.39f, 0.0001f);
+            rb.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezeRotation;
+            for (int i = 0; i < unlockedWeapons.Count; i++)
+            {
+                unlockedWeapons[i].SetActive(false);
+            }
+            _animatorController.Play("DeadMan");
             this.gameObject.layer = 12;
             _spriter.sortingOrder = -1;
         }
 
-        if (Dead==false)
+        if (Dead == false)
         {
             CheckGround();
             walk();
-            if (isGrounded==false)
+            if (isGrounded == false)
             {
                 _animatorController.Play("JumpTest");
             }
-            else if (rb.velocity.y==0 && rb.velocity.x==0&&isGrounded==true)
+            else if (rb.velocity.y == 0 && rb.velocity.x == 0 && isGrounded == true)
             {
                 _animatorController.Play("IdlePlayer");
             }
-            else if (isGrounded==true&&rb.velocity.x!=0)
+            else if (isGrounded == true && rb.velocity.x != 0)
             {
                 _animatorController.Play("RunMan");
             }
@@ -112,62 +118,77 @@ public class Player1 : MonoBehaviour
                 _animatorController.Play("IdlePlayer");
             }
 
+            if (Input.GetKey(shootBUTT))
+            {
+                Shot();
+            }
 
-
-            if(Input.GetKeyDown(JumpBUTT) &&isGrounded)
+            if (Input.GetKeyDown(JumpBUTT) && isGrounded)
             {
                 Jump();
             }
-            if (Input.GetKeyDown(p1_switchtBUTT)&&_ReloadScript.isReload==false)
+            if (Input.GetKeyDown(switchtBUTT) && _ReloadScript.isReload == false)
             {
                 SwitchWeapon();
             }
         }
     }
-void Jump()
-{
-    rb.velocity= (Vector2.up * JumpForce);
-}
-     void walk()
-     {
-         float h = 0f;
-         float v = 0f;
-         Vector2 smoothedInput;
-            if (Input.GetKey(LeftBUTT))
+    void Shot()
+    {
+        for (int k = 0; k < unlockedWeapons.Count; k++)
+        {
+            if (unlockedWeapons[k].activeInHierarchy)
             {
-                 h = -1f;
-                
-            }
-            else if (Input.GetKey(RightBUTT))
-            {
-                h = 1f;
-                
-            }
-            smoothedInput = SmoothInput(h,v);
-
-        
-            float smoothedH = smoothedInput.x;
-            float smoothedV = smoothedInput.y;
-         
-            rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
-            if (smoothedInput.x<0&&!flip)
-            {
-                Flip();
-            }
-            if (smoothedInput.x > 0 && flip)
-            {
-                Flip();
+                weapon = unlockedWeapons[k].gameObject;
+                weaponScript = weapon.GetComponent<GunParametrs>();
+                weaponScript.Shoot();
             }
         }
-     void Flip()
-     {
-         flip = !flip;
-         this.gameObject.transform.Rotate(0, 180, 0);
-         
-     }
-     private void CheckGround()
+    }
+    void Jump()
     {
-        if (GroundChecker1.isGrounded==false)
+        rb.velocity = (Vector2.up * JumpForce);
+    }
+    void walk()
+    {
+        float h = 0f;
+        float v = 0f;
+        Vector2 smoothedInput;
+        if (Input.GetKey(LeftBUTT))
+        {
+            h = -1f;
+
+        }
+        else if (Input.GetKey(RightBUTT))
+        {
+            h = 1f;
+
+        }
+        smoothedInput = SmoothInput(h, v);
+
+
+        float smoothedH = smoothedInput.x;
+        float smoothedV = smoothedInput.y;
+
+        rb.velocity = new Vector2(smoothedInput.x * _speed, rb.velocity.y);
+        if (smoothedInput.x < 0 && !flip)
+        {
+            Flip();
+        }
+        if (smoothedInput.x > 0 && flip)
+        {
+            Flip();
+        }
+    }
+    void Flip()
+    {
+        flip = !flip;
+        this.gameObject.transform.Rotate(0, 180, 0);
+
+    }
+    private void CheckGround()
+    {
+        if (GroundChecker1.isGrounded == false)
         {
             isGrounded = false;
         }
@@ -176,19 +197,19 @@ void Jump()
             isGrounded = true;
         }
     }
-    private void OnTriggerEnter2D(Collider2D other) 
+    private void OnTriggerEnter2D(Collider2D other)
     {
         int addCartridges;
         if (other.CompareTag("Health"))
         {
-            if (health!=100)
+            if (health != 100)
             {
                 TakeHealth();
                 Destroy(other.gameObject);
             }
-            
+
         }
-        if (other.CompareTag("AutoGun")|| other.CompareTag("Shotgun"))
+        if (other.CompareTag("AutoGun") || other.CompareTag("Shotgun"))
         {
             for (int i = 0; i < allWeapons.Length; i++)
             {
@@ -221,7 +242,7 @@ void Jump()
                 }
             }
             Destroy(other.gameObject);
-        }  
+        }
     }
     public void SwitchWeapon()
     {
@@ -230,58 +251,58 @@ void Jump()
             if (unlockedWeapons[i].activeInHierarchy)
             {
                 unlockedWeapons[i].SetActive(false);
-                
-                if (i!=0)
+
+                if (i != 0)
                 {
-                    unlockedWeapons[i-1].SetActive(true);
+                    unlockedWeapons[i - 1].SetActive(true);
                     break;
                 }
                 else
                 {
-                     unlockedWeapons[unlockedWeapons.Count-1].SetActive(true);
-                     break;
+                    unlockedWeapons[unlockedWeapons.Count - 1].SetActive(true);
+                    break;
                 }
-                
+
             }
         }
     }
-    
 
-private Vector2 SmoothInput(float targetH, float targetV)
-{
-    float sensitivity = 10f;
-    float deadZone = 0.001f;
 
-    slidingH = Mathf.MoveTowards(slidingH,
-                  targetH, sensitivity * Time.deltaTime);
+    private Vector2 SmoothInput(float targetH, float targetV)
+    {
+        float sensitivity = 10f;
+        float deadZone = 0.001f;
 
-    slidingV = Mathf.MoveTowards(slidingV ,
-                  targetV, sensitivity * Time.deltaTime);
+        slidingH = Mathf.MoveTowards(slidingH,
+                      targetH, sensitivity * Time.deltaTime);
 
-    return new Vector2(
-           (Mathf.Abs(slidingH) < deadZone) ? 0f : slidingH ,
-           (Mathf.Abs(slidingV) < deadZone) ? 0f : slidingV );
-}
+        slidingV = Mathf.MoveTowards(slidingV,
+                      targetV, sensitivity * Time.deltaTime);
 
-        public void TakeDamage(int damage)
-       {
-           Instantiate(bloodEffect, effectPoint.position, transform.rotation);
-           health -= damage;
-       }
-       public void TakeHealth()
-       {
-           if (Dead!=true)
-           {
-               if (health<75)
-                {
-                     health+=25;
-                }
-                else
-                {
-                    health=100;
-                }
-           }
-       }
+        return new Vector2(
+               (Mathf.Abs(slidingH) < deadZone) ? 0f : slidingH,
+               (Mathf.Abs(slidingV) < deadZone) ? 0f : slidingV);
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Instantiate(bloodEffect, effectPoint.position, transform.rotation);
+        health -= damage;
+    }
+    public void TakeHealth()
+    {
+        if (Dead != true)
+        {
+            if (health < 75)
+            {
+                health += 25;
+            }
+            else
+            {
+                health = 100;
+            }
+        }
+    }
 }
 
 
