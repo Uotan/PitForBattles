@@ -17,10 +17,7 @@ public class Player1 : MonoBehaviour
     KeyCode JumpBUTT;
 
     static string p1_switchPREFS;
-    KeyCode switchtBUTT;
-
-    static string p1_shootPREFS;
-    KeyCode shootBUTT;
+    KeyCode p1_switchtBUTT;
 
     public ReloadChecker _ReloadScript;
 
@@ -66,10 +63,8 @@ public class Player1 : MonoBehaviour
         JumpBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_JumpPREFS);
 
         p1_switchPREFS = PlayerPrefs.GetString("Set_p1_swith");
-        switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_switchPREFS);
+        p1_switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_switchPREFS);
 
-        p1_shootPREFS = PlayerPrefs.GetString("Set_p1_shoot");
-        shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_shootPREFS);
 
         _spriter = GetComponent<SpriteRenderer>();
 
@@ -80,7 +75,6 @@ public class Player1 : MonoBehaviour
 
     void Update()
     {
-        
         if (health <= 0)
         {
             Dead = true;
@@ -118,30 +112,15 @@ public class Player1 : MonoBehaviour
                 _animatorController.Play("IdlePlayer");
             }
 
-            if (Input.GetKey(shootBUTT))
-            {
-                Shot();
-            }
+
 
             if (Input.GetKeyDown(JumpBUTT) && isGrounded)
             {
                 Jump();
             }
-            if (Input.GetKeyDown(switchtBUTT) && _ReloadScript.isReload == false)
+            if (Input.GetKeyDown(p1_switchtBUTT) && _ReloadScript.isReload == false)
             {
                 SwitchWeapon();
-            }
-        }
-    }
-    void Shot()
-    {
-        for (int k = 0; k < unlockedWeapons.Count; k++)
-        {
-            if (unlockedWeapons[k].activeInHierarchy)
-            {
-                weapon = unlockedWeapons[k].gameObject;
-                weaponScript = weapon.GetComponent<GunParametrs>();
-                weaponScript.Shoot();
             }
         }
     }
@@ -304,6 +283,5 @@ public class Player1 : MonoBehaviour
         }
     }
 }
-
 
 
