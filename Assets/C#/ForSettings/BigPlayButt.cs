@@ -25,6 +25,9 @@ public class BigPlayButt : MonoBehaviour, IPointerDownHandler
 
     public Text p1_name;
     public Text p2_name;
+
+
+    public int sceneNumb;
     public void OnPointerDown(PointerEventData eventData)
     {
         PlayerPrefs.SetString("Set_p1_left",p1_leftTEXT.text);
@@ -43,6 +46,6 @@ public class BigPlayButt : MonoBehaviour, IPointerDownHandler
 
         PlayerPrefs.SetString("Set_p1_name", p1_name.text);
         PlayerPrefs.SetString("Set_p2_name", p2_name.text);
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(sceneNumb);
     }
 }

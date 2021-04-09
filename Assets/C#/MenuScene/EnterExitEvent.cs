@@ -19,4 +19,5 @@ public class EnterExitEvent : MonoBehaviour
         _render.color = new Color(1f, 1f, 1f, 1f);
 
     }
+    
 }

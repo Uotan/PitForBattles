@@ -1,11 +1,26 @@
-using Mirror;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
+using Mirror;
 
 public class LocalTestPlayer : NetworkBehaviour
 {
+    //присваивание значений из PlayerPrefs
+    static string net_LeftPREFS;
+    KeyCode LeftBUTT;
+
+    static string net_rightPREFS;
+    KeyCode RightBUTT;
+
+    static string net_JumpPREFS;
+    KeyCode JumpBUTT;
+
+    static string net_switchPREFS;
+    KeyCode switchtBUTT;
+
+    static string net_shootPREFS;
+    KeyCode shootBUTT;
 
     public ReloadChecker _ReloadScript;
 
@@ -35,7 +50,7 @@ public class LocalTestPlayer : NetworkBehaviour
     public GameObject GroundCheckGO;
 
     public GameObject weapon;
-    public GunParametrs weaponScript;
+    public MultiGunParapetrs weaponScript;
     public bool isGrounded;
 
 
@@ -43,6 +58,23 @@ public class LocalTestPlayer : NetworkBehaviour
     [Client]
     private void Start()
     {
+        net_LeftPREFS = PlayerPrefs.GetString("Set_net_left");
+        LeftBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), net_LeftPREFS);
+
+        net_rightPREFS = PlayerPrefs.GetString("Set_net_right");
+        RightBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), net_rightPREFS);
+
+        net_JumpPREFS = PlayerPrefs.GetString("Set_net_jump");
+        JumpBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), net_JumpPREFS);
+
+        net_switchPREFS = PlayerPrefs.GetString("Set_net_swith");
+        switchtBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), net_switchPREFS);
+
+        net_shootPREFS = PlayerPrefs.GetString("Set_net_shoot");
+        shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), net_shootPREFS);
+
+
+
         _ReloadScript = GetComponent<ReloadChecker>();
 
         _spriter = GetComponent<SpriteRenderer>();
@@ -97,13 +129,36 @@ public class LocalTestPlayer : NetworkBehaviour
                     _animatorController.Play("IdlePlayer");
                 }
 
+                if (Input.GetKey(shootBUTT))
+                {
+                    for (int k = 0; k < unlockedWeapons.Count; k++)
+                    {
+                        if (unlockedWeapons[k].activeInHierarchy)
+                        {
+                            weapon = unlockedWeapons[k].gameObject;
+                            weaponScript = weapon.GetComponent<MultiGunParapetrs>();
+                            weaponScript.PlayerWant2shot=true;
+                        }
+                    }
+                }
+                if (Input.GetKeyUp(shootBUTT))
+                {
+                    for (int k = 0; k < unlockedWeapons.Count; k++)
+                    {
+                        if (unlockedWeapons[k].activeInHierarchy)
+                        {
+                            weapon = unlockedWeapons[k].gameObject;
+                            weaponScript = weapon.GetComponent<MultiGunParapetrs>();
+                            weaponScript.PlayerWant2shot = false;
+                        }
+                    }
+                }
 
-
-                if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+                if (Input.GetKeyDown(JumpBUTT) && isGrounded)
                 {
                     Jump();
                 }
-                if (Input.GetKeyDown(KeyCode.B) && _ReloadScript.isReload == false)
+                if (Input.GetKeyDown(switchtBUTT) && _ReloadScript.isReload == false)
                 {
                     SwitchWeapon();
                 }
@@ -120,12 +175,12 @@ public class LocalTestPlayer : NetworkBehaviour
         float h = 0f;
         float v = 0f;
         Vector2 smoothedInput;
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(LeftBUTT))
         {
             h = -1f;
 
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(RightBUTT))
         {
             h = 1f;
 
@@ -200,7 +255,7 @@ public class LocalTestPlayer : NetworkBehaviour
                     if (unlockedWeapons[k].name == unlockedWeapons[j].name)
                     {
                         weapon = unlockedWeapons[k].gameObject;
-                        weaponScript = weapon.GetComponent<GunParametrs>();
+                        weaponScript = weapon.GetComponent<MultiGunParapetrs>();
                         addCartridges = weaponScript.startCartridges;
                         weaponScript.cartridges += addCartridges;
                         unlockedWeapons.Remove(unlockedWeapons[j]);

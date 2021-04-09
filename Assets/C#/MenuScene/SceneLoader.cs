@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MultiGame : MonoBehaviour
+public class SceneLoader : MonoBehaviour
 {
+    public int scene_num;
     private void OnMouseDown()
     {
-        SceneManager.LoadScene(3);
+        SceneManager.LoadScene(scene_num);
     }
 }

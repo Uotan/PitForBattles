@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/FirstPit.unity
     guid: 1653cf118345cbf42a47aa8c1536386f
   - enabled: 1
+    path: Assets/Scenes/MP_controlSett.unity
+    guid: 717c67eda721e3542b66651bb93e1420
+  - enabled: 1
     path: Assets/Scenes/MP_test.unity
     guid: 73f7965fda307184c97efe997faecb4d
   m_configObjects: {}
