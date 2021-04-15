@@ -49,34 +49,9 @@ public class ShotgunBullet : MonoBehaviour
 
         
     }
-    //private void OnTriggerEnter2D(Collider2D other) 
-    //{
-    //    //if (other.CompareTag("Bullet")||other.CompareTag("Weapon")||other.CompareTag("Health"))
-    //    //{
-                    
-    //    //}
-    //    //else
-    //    //{
-            
-    //    //}
-    //    if (other.CompareTag("Enemy"))
-    //    {
-    //        other.GetComponent<Player1>().TakeDamage(damage);
-
-
-    //    }
-    //    if (other.CompareTag("Enemy1"))
-    //    {
-    //        other.GetComponent<Player2>().TakeDamage(damage);
-    //    }
-    //    rb.constraints = RigidbodyConstraints2D.FreezeAll;
-    //    BC2D.enabled = false;
-    //    HIT.Play("BulletHit");
-    //    Invoke("Des", 0.2f);
-    //}
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (collision.gameObject.CompareTag("Player1"))
         {
             collision.gameObject.GetComponent<Player1>().TakeDamage(damage);
 
@@ -85,10 +60,8 @@ public class ShotgunBullet : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<LocalTestPlayer>().TakeDamage(damage);
-
-
         }
-        if (collision.gameObject.CompareTag("Enemy1"))
+        if (collision.gameObject.CompareTag("Player2"))
         {
             collision.gameObject.GetComponent<Player2>().TakeDamage(damage);
         }
