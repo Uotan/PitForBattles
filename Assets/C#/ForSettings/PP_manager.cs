@@ -167,7 +167,7 @@ public class PP_manager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetString("Set_p2_shoot", "K");
+            PlayerPrefs.SetString("Set_p2_shoot", "Mouse0");
             p2_shoot = PlayerPrefs.GetString("Set_p2_shoot");
             p2_shootTEXT.text = p2_shoot;
         }
@@ -181,7 +181,7 @@ public class PP_manager : MonoBehaviour
         }
         else
         {
-            PlayerPrefs.SetString("Set_p2_swith", "L");
+            PlayerPrefs.SetString("Set_p2_swith", "Mouse1");
             p2_switch = PlayerPrefs.GetString("Set_p2_swith");
             p2_switchTEXT.text = p2_switch;
         }

@@ -14,13 +14,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DuelMaps/FirstPit.unity
     guid: 1653cf118345cbf42a47aa8c1536386f
-  - enabled: 1
-    path: Assets/Scenes/MP_client.unity
-    guid: 717c67eda721e3542b66651bb93e1420
-  - enabled: 1
-    path: Assets/Scenes/MP_maps/MP_test.unity
-    guid: 73f7965fda307184c97efe997faecb4d
-  - enabled: 1
-    path: Assets/Scenes/MP_createroom.unity
-    guid: 352779da9e8ad744aa8280c9251fd705
   m_configObjects: {}
