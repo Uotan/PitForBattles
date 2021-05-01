@@ -17,6 +17,7 @@ public class HealthSpawner : MonoBehaviour
     private int[] Ran;
     void Start()
     {
+        spawnTime = startSpawnTime;
         for (int i = 0; i < startSpawnPoint.Length; i++)
         {
             spawnPoint.Add(startSpawnPoint[i]);
@@ -38,15 +39,15 @@ public class HealthSpawner : MonoBehaviour
             
             spawnTime = startSpawnTime;
         }
-        else if (healthObjects.Length > 2)
-        {
-            for (int i = 0; i < healthObjects.Length; i++)
-            {
-                Destroy(healthObjects[i]);
-            }
+        //else if (healthObjects.Length > 2)
+        //{
+        //    for (int i = 0; i < healthObjects.Length; i++)
+        //    {
+        //        Destroy(healthObjects[i]);
+        //    }
 
-        }
-        else
+        //}
+        if (healthObjects.Length == 0)
         {
             spawnTime -= Time.deltaTime;
         }
@@ -61,12 +62,9 @@ public class HealthSpawner : MonoBehaviour
     }
     public void CheckHealth()
     {
-
-
         var healthObjects = GameObject.FindGameObjectsWithTag("Health");
         while (healthObjects.Length < 2)
         {
-            
             int lastEnumerable = spawnPoint.Count;
             System.Random random = new System.Random();
             Ran = Enumerable.Range(0, lastEnumerable).OrderBy(i => random.Next()).ToArray();

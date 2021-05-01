@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 891822573118289011}
   - component: {fileID: 891822573118289010}
   - component: {fileID: 891822573118289009}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: CheckGronder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 100534211}
   m_Layer: 13
   m_Name: Player2
-  m_TagString: Enemy1
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
