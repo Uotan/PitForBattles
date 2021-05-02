@@ -140,9 +140,9 @@ MonoBehaviour:
   shootpoint: {fileID: 5249413436735681293}
   effect: {fileID: 367380643138802816, guid: 4e89b94de9fc46443b848f36ffeafc34, type: 3}
   effectPoint: {fileID: 5249413435719530871}
-  StartTimeBTWShots: 0.5
+  StartTimeBTWShots: 0.48
   reloadTime: 0
-  startReloadTime: 0.5
+  startReloadTime: 0.48
   _animatorController: {fileID: 5249413435925216527}
 --- !u!95 &5249413435925216527
 Animator:

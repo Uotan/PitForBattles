@@ -4,11 +4,9 @@ using UnityEngine;
 
 public class GunParametrs : MonoBehaviour
 {
-    static string p1_shoottPREFS;
-    KeyCode p1_shootBUTT;
+    static string shoottPREFS;
+    KeyCode shootBUTT;
 
-    static string p2_shoottPREFS;
-    KeyCode p2_shootBUTT;
 
     //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
     public ReloadChecker isReloadedscript;
@@ -38,19 +36,24 @@ public class GunParametrs : MonoBehaviour
     public float startReloadTime;
     public Animator _animatorController;
 
+
+    bool jstCheckbool = false;
+
     GunState Gstate;
 
 
     private void Start()
     {
-        //**********************************
-        p1_shoottPREFS = PlayerPrefs.GetString("Set_p1_shoot");
-        p1_shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p1_shoottPREFS);
-
-
-        p2_shoottPREFS = PlayerPrefs.GetString("Set_p2_shoot");
-        p2_shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), p2_shoottPREFS);
-        //**********************************
+        if (gameObject.CompareTag("Player1"))
+        {
+            shoottPREFS = PlayerPrefs.GetString("Set_p1_shoot");
+            shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), shoottPREFS);
+        }
+        if (gameObject.CompareTag("Player2"))
+        {
+            shoottPREFS = PlayerPrefs.GetString("Set_p2_shoot");
+            shootBUTT = (KeyCode)System.Enum.Parse(typeof(KeyCode), shoottPREFS);
+        }
 
         cartridges = startCartridges;
         cartridgesInBarage = startCartridgesInBarage;
@@ -59,12 +62,13 @@ public class GunParametrs : MonoBehaviour
     }
     void Update()
     {
-        if (cartridgesInBarage <= 0 && cartridges > 0)
+        if (cartridgesInBarage <= 0 && cartridges > 0 && jstCheckbool == false)
         {
             reloadTime = startReloadTime;
-            Gstate = GunState.Reload;
             Debug.Log("Reload");
-            Reload();
+            jstCheckbool = true;
+            Invoke("Reload", 0.2f);
+            //Reload();
         }
         if (Gstate == GunState.Shoot)
         {
@@ -82,14 +86,11 @@ public class GunParametrs : MonoBehaviour
             isReloadedscript.isReload = false;
             _animatorController.Play("IdleGun");
         }
-
-        if (gameObject.CompareTag("Player1"))
+        if (reloadTime <= 0)
         {
-            if (reloadTime <= 0)
-            {
                 if (TimeBTWShots <= 0)
                 {
-                    if (Input.GetKey(p1_shootBUTT) && cartridgesInBarage > 0)
+                    if (Input.GetKey(shootBUTT) && cartridgesInBarage > 0)
                     {
                         Gstate = GunState.Shoot;
                         Instantiate(effect, effectPoint.position, Quaternion.identity);
@@ -99,15 +100,6 @@ public class GunParametrs : MonoBehaviour
                             Instantiate(bullet, shootpoint.position, transform.rotation);
                             TimeBTWShots = StartTimeBTWShots;
                         }
-                    }
-                    else if (Input.GetKey(p1_shootBUTT) && cartridgesInBarage <= 0 && cartridges > 0)
-                    {
-                        reloadTime = startReloadTime;
-                        Gstate = GunState.Reload;
-                        Debug.Log("Reload");
-
-                        Reload();
-
                     }
                 }
                 else
@@ -120,67 +112,18 @@ public class GunParametrs : MonoBehaviour
                     }
                 }
 
-            }
-            else
-            {
-                reloadTime -= Time.deltaTime;
-            }
-
-
         }
-        else if (gameObject.CompareTag("Player2"))
+        else
         {
-
-            if (reloadTime <= 0)
-            {
-                if (TimeBTWShots <= 0)
-                {
-                    if (Input.GetKey(p2_shootBUTT) && cartridgesInBarage > 0)
-                    {
-                        Gstate = GunState.Shoot;
-                        Instantiate(effect, effectPoint.position, Quaternion.identity);
-                        cartridgesInBarage -= 1;
-                        for (int i = 0; i < NumberOfBullets; i++)
-                        {
-                            Instantiate(bullet, shootpoint.position, transform.rotation);
-                            TimeBTWShots = StartTimeBTWShots;
-                        }
-                    }
-                    else if (Input.GetKey(p2_shootBUTT) && cartridgesInBarage <= 0 && cartridges > 0)
-                    {
-                        reloadTime = startReloadTime;
-                        Gstate = GunState.Reload;
-                        Debug.Log("Reload");
-
-                        Reload();
-
-                    }
-                }
-                else
-                {
-                    TimeBTWShots -= Time.deltaTime;
-
-                    if (TimeBTWShots <= 0)
-                    {
-                        Gstate = GunState.Idle;
-                    }
-                }
-
-            }
-            else
-            {
-                reloadTime -= Time.deltaTime;
-            }
-
+            reloadTime -= Time.deltaTime;
         }
-
-
     }
 
     void Reload()
     {
         if (cartridges >= 0)
         {
+            Gstate = GunState.Reload;
             if (cartridges - startCartridgesInBarage >= 0)
             {
                 cartridges = cartridges - startCartridgesInBarage;
@@ -203,6 +146,7 @@ public class GunParametrs : MonoBehaviour
         {
             Debug.Log("No more cartridges");
         }
+        jstCheckbool = false;
     }
     public enum GunState
     {

@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         p1_nameTXT.text = PlayerPrefs.GetString("Set_p1_name");
         p2_nameTXT.text = PlayerPrefs.GetString("Set_p2_name");
         startTime = timeMig;

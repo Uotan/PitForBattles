@@ -178,7 +178,7 @@ public class Player1 : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        int addCartridges;
+        //int addCartridges;
         if (other.CompareTag("Health"))
         {
             if (health != 100)
@@ -212,6 +212,7 @@ public class Player1 : MonoBehaviour
                 {
                     if (unlockedWeapons[k].name == unlockedWeapons[j].name)
                     {
+                        int addCartridges;
                         weapon = unlockedWeapons[k].gameObject;
                         weaponScript = weapon.GetComponent<GunParametrs>();
                         addCartridges = weaponScript.startCartridges;
@@ -219,6 +220,18 @@ public class Player1 : MonoBehaviour
                         unlockedWeapons.Remove(unlockedWeapons[j]);
                     }
                 }
+            }
+            Destroy(other.gameObject);
+        }
+        if (other.CompareTag("Ammo"))
+        {
+            for (int k = 0; k < unlockedWeapons.Count; k++)
+            {
+                        int addCartridges;  
+                        weapon = unlockedWeapons[k].gameObject;
+                        weaponScript = weapon.GetComponent<GunParametrs>();
+                        addCartridges = weaponScript.startCartridges/2;
+                        weaponScript.cartridges += addCartridges;
             }
             Destroy(other.gameObject);
         }
