@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DuelMaps/Pit_1.unity
     guid: 1653cf118345cbf42a47aa8c1536386f
+  - enabled: 1
+    path: Assets/Scenes/DuelMaps/Pit_2.unity
+    guid: 73f7965fda307184c97efe997faecb4d
+  - enabled: 1
+    path: Assets/Scenes/DuelMaps/Pit_3.unity
+    guid: 63f70283c969d3d40b11ad537e90e8a8
   m_configObjects: {}

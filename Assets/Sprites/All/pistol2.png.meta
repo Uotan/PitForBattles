@@ -1,70 +1,73 @@
 fileFormatVersion: 2
-guid: c7a49963b6c9a5f429cf89c8f00625cf
+guid: 7b2e7176f011ffc4eb50be342eba8c36
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4854829337826818713
-    second: pistol_0
+      213: -6911898592872783027
+    second: pistol2_0
   - first:
-      213: -5900747555884359866
-    second: pistol_1
+      213: -8244712992995947297
+    second: pistol2_1
   - first:
-      213: -9044998883933546132
-    second: pistol_2
+      213: 4759681563048594646
+    second: pistol2_2
   - first:
-      213: -1047946430589172204
-    second: pistol_3
+      213: 1571122180032858133
+    second: pistol2_3
   - first:
-      213: -247361163814606302
-    second: pistol_4
+      213: -414082001202151941
+    second: pistol2_4
   - first:
-      213: 8443715686503185739
-    second: pistol_5
+      213: -6015997594028753448
+    second: pistol2_5
   - first:
-      213: 166650025725624185
-    second: pistol_6
+      213: -8289845677216205241
+    second: pistol2_6
   - first:
-      213: 6302259528507885953
-    second: pistol_7
+      213: 827199149498539800
+    second: pistol2_7
   - first:
-      213: -2319956879644990622
-    second: pistol_8
+      213: 3338783493973912794
+    second: pistol2_8
   - first:
-      213: 8158377209240539943
-    second: pistol_9
+      213: -4171839797643459166
+    second: pistol2_9
   - first:
-      213: 7358194282122298951
-    second: pistol_10
+      213: 6535850407130324207
+    second: pistol2_10
   - first:
-      213: -5796076827328916179
-    second: pistol_11
+      213: -9115596622786883589
+    second: pistol2_11
   - first:
-      213: 6790005987022040906
-    second: pistol_12
+      213: 4236215197535818938
+    second: pistol2_12
   - first:
-      213: -2529681144327368466
-    second: pistol_13
+      213: 6900000544147495943
+    second: pistol2_13
   - first:
-      213: -8940906632620483083
-    second: pistol_14
+      213: 1861068085060145495
+    second: pistol2_14
   - first:
-      213: -9032892793161688831
-    second: pistol_15
+      213: -5211711230217586548
+    second: pistol2_15
   - first:
-      213: 9073556777380434981
-    second: pistol_16
+      213: -6224169033809023273
+    second: pistol2_16
   - first:
-      213: 4422473939542599057
-    second: pistol_17
+      213: -725032931694235442
+    second: pistol2_17
   - first:
-      213: -9060234006770118668
-    second: pistol_18
+      213: -525149376350652235
+    second: pistol2_18
   - first:
-      213: 156323463289262358
-    second: pistol_19
+      213: 4509984987569672463
+    second: pistol2_19
   - first:
-      213: -7138953628059513509
-    second: pistol_20
+      213: 3951274108788136993
+    second: pistol2_20
+  - first:
+      213: 2292391905007168980
+    second: pistol2_21
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -154,7 +157,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: pistol_0
+      name: pistol2_0
       rect:
         serializedVersion: 2
         x: 4
@@ -168,14 +171,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 76500b1707e20acb0800000000000000
-      internalID: -4854829337826818713
+      spriteID: d43ab40c9d00410a0800000000000000
+      internalID: -6911898592872783027
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_1
+      name: pistol2_1
       rect:
         serializedVersion: 2
         x: 43
@@ -189,14 +192,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 64f12468c555c1ea0800000000000000
-      internalID: -5900747555884359866
+      spriteID: fdccd691735e49d80800000000000000
+      internalID: -8244712992995947297
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_2
+      name: pistol2_2
       rect:
         serializedVersion: 2
         x: 96
@@ -210,14 +213,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c6916510075b97280800000000000000
-      internalID: -9044998883933546132
+      spriteID: 6dccc79e929cd0240800000000000000
+      internalID: 4759681563048594646
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_3
+      name: pistol2_3
       rect:
         serializedVersion: 2
         x: 147
@@ -231,14 +234,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 416081d0642f471f0800000000000000
-      internalID: -1047946430589172204
+      spriteID: 518889f6c4fbdc510800000000000000
+      internalID: 1571122180032858133
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_4
+      name: pistol2_4
       rect:
         serializedVersion: 2
         x: 202
@@ -252,14 +255,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22a6a930552319cf0800000000000000
-      internalID: -247361163814606302
+      spriteID: bfd76722d92e04af0800000000000000
+      internalID: -414082001202151941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_5
+      name: pistol2_5
       rect:
         serializedVersion: 2
         x: 5
@@ -273,14 +276,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b4d7a6e1eaa1e2570800000000000000
-      internalID: 8443715686503185739
+      spriteID: 8ddbf46ff02e28ca0800000000000000
+      internalID: -6015997594028753448
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_6
+      name: pistol2_6
       rect:
         serializedVersion: 2
         x: 54
@@ -294,14 +297,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 97f7f21c05f005200800000000000000
-      internalID: 166650025725624185
+      spriteID: 74678be274d84fc80800000000000000
+      internalID: -8289845677216205241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_7
+      name: pistol2_7
       rect:
         serializedVersion: 2
         x: 105
@@ -315,14 +318,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 189880f76af167750800000000000000
-      internalID: 6302259528507885953
+      spriteID: 81f9d586e3dca7b00800000000000000
+      internalID: 827199149498539800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_8
+      name: pistol2_8
       rect:
         serializedVersion: 2
         x: 154
@@ -336,14 +339,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2636986728bddcfd0800000000000000
-      internalID: -2319956879644990622
+      spriteID: adca04ce5edb55e20800000000000000
+      internalID: 3338783493973912794
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_9
+      name: pistol2_9
       rect:
         serializedVersion: 2
         x: 205
@@ -357,14 +360,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 723dc6cc8d0683170800000000000000
-      internalID: 8158377209240539943
+      spriteID: 2a5cf91bec5aa16c0800000000000000
+      internalID: -4171839797643459166
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_10
+      name: pistol2_10
       rect:
         serializedVersion: 2
         x: 7
@@ -378,14 +381,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 746c536d6be8d1660800000000000000
-      internalID: 7358194282122298951
+      spriteID: fec581e115104ba50800000000000000
+      internalID: 6535850407130324207
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_11
+      name: pistol2_11
       rect:
         serializedVersion: 2
         x: 53
@@ -399,14 +402,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d25df20a5d2309fa0800000000000000
-      internalID: -5796076827328916179
+      spriteID: bff89070b25ee7180800000000000000
+      internalID: -9115596622786883589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_12
+      name: pistol2_12
       rect:
         serializedVersion: 2
         x: 101
@@ -420,14 +423,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4f693f5872fa3e50800000000000000
-      internalID: 6790005987022040906
+      spriteID: ab4db39174f0aca30800000000000000
+      internalID: 4236215197535818938
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_13
+      name: pistol2_13
       rect:
         serializedVersion: 2
         x: 151
@@ -441,14 +444,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee01d5de664c4ecd0800000000000000
-      internalID: -2529681144327368466
+      spriteID: 70cd9e7efe9b1cf50800000000000000
+      internalID: 6900000544147495943
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_14
+      name: pistol2_14
       rect:
         serializedVersion: 2
         x: 206
@@ -462,14 +465,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5fdd8b0e9c48be380800000000000000
-      internalID: -8940906632620483083
+      spriteID: 75193d02097d3d910800000000000000
+      internalID: 1861068085060145495
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_15
+      name: pistol2_15
       rect:
         serializedVersion: 2
         x: 4
@@ -483,14 +486,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1095969ecd7b4a280800000000000000
-      internalID: -9032892793161688831
+      spriteID: c8877fabf384ca7b0800000000000000
+      internalID: -5211711230217586548
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_16
+      name: pistol2_16
       rect:
         serializedVersion: 2
         x: 51
@@ -504,14 +507,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5245915b0dfbbed70800000000000000
-      internalID: 9073556777380434981
+      spriteID: 7dea3d5ad3f4f99a0800000000000000
+      internalID: -6224169033809023273
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_17
+      name: pistol2_17
       rect:
         serializedVersion: 2
         x: 100
@@ -525,14 +528,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 195ebd2ed98cf5d30800000000000000
-      internalID: 4422473939542599057
+      spriteID: ec0b7e7d36a20f5f0800000000000000
+      internalID: -725032931694235442
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_18
+      name: pistol2_18
       rect:
         serializedVersion: 2
         x: 149
@@ -546,14 +549,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ff8d8c8c25934280800000000000000
-      internalID: -9060234006770118668
+      spriteID: 5b8f990bc6b46b8f0800000000000000
+      internalID: -525149376350652235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_19
+      name: pistol2_19
       rect:
         serializedVersion: 2
         x: 205
@@ -567,14 +570,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6115a639c5f5b2200800000000000000
-      internalID: 156323463289262358
+      spriteID: f015f66837fa69e30800000000000000
+      internalID: 4509984987569672463
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: pistol_20
+      name: pistol2_20
       rect:
         serializedVersion: 2
         x: 2
@@ -588,8 +591,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5dc683cf775dec90800000000000000
-      internalID: -7138953628059513509
+      spriteID: 12cd3800edeb5d630800000000000000
+      internalID: 3951274108788136993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: pistol2_21
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 127
+        width: 35
+        height: 11
+      alignment: 9
+      pivot: {x: 0.9714286, y: 0.6363636}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ddeeefba4630df10800000000000000
+      internalID: 2292391905007168980
       vertices: []
       indices: 
       edges: []

@@ -15,7 +15,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5249413435719530871
 Transform:
   m_ObjectHideFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5249413435719530868}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.363, y: -0.137, z: 0}
+  m_LocalPosition: {x: -0.438, y: -0.065, z: 0}
   m_LocalScale: {x: 1.4285715, y: 1.4285715, z: 1}
   m_Children: []
   m_Father: {fileID: 5249413435925216524}
@@ -140,9 +140,9 @@ MonoBehaviour:
   shootpoint: {fileID: 5249413436735681293}
   effect: {fileID: 367380643138802816, guid: 4e89b94de9fc46443b848f36ffeafc34, type: 3}
   effectPoint: {fileID: 5249413435719530871}
-  StartTimeBTWShots: 0.48
+  StartTimeBTWShots: 0.5
   reloadTime: 0
-  startReloadTime: 0.48
+  startReloadTime: 0.5
   _animatorController: {fileID: 5249413435925216527}
 --- !u!95 &5249413435925216527
 Animator:
@@ -178,7 +178,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5249413436735681293
 Transform:
   m_ObjectHideFlags: 0
@@ -187,7 +187,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5249413436735681282}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.249, y: -0.054, z: 0}
+  m_LocalPosition: {x: -1.192, y: -0.046, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5249413435925216524}
