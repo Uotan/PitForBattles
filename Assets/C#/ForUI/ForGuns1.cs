@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class ForGuns1 : MonoBehaviour
 {
     public GameObject Revolver;
-    public GunParametrs RevolverPar;
+    GunParametrs RevolverPar;
     public GameObject ShootGun;
-    public GunParametrs ShootGunPar;
+    GunParametrs ShootGunPar;
     public GameObject AutoGun;
-    public GunParametrs AutoGunPar;
+    GunParametrs AutoGunPar;
     public Text text1;
 
     private void Start() {
