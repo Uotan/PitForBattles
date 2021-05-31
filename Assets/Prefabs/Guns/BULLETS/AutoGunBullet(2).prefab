@@ -150,8 +150,8 @@ MonoBehaviour:
   speedXmax: 35
   lifetime: 3
   damage: 8
-  YRangePlus: 0.5
-  YRangeMinus: 0.5
+  YRangePlus: 0.6
+  YRangeMinus: 0.6
   Y: 0
   X: 0
   rb: {fileID: 0}

@@ -8445,6 +8445,12 @@ Transform:
   m_Father: {fileID: 7356078920405519421}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &491907234 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4948113040612236272, guid: 71efeb3dbaeaddd42b7a70eac2840bba,
+    type: 3}
+  m_PrefabInstance: {fileID: 4983771201772496596}
+  m_PrefabAsset: {fileID: 0}
 --- !u!20 &519420031 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 4983771201404739243, guid: 71efeb3dbaeaddd42b7a70eac2840bba,
@@ -19228,6 +19234,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player1
       objectReference: {fileID: 0}
+    - target: {fileID: 1263586042535963941, guid: 9d06d041198c4864dacda357c658fc82,
+        type: 3}
+      propertyPath: _cameraAnimator
+      value: 
+      objectReference: {fileID: 491907234}
+    - target: {fileID: 6022635488985597517, guid: 9d06d041198c4864dacda357c658fc82,
+        type: 3}
+      propertyPath: _cameraAnimator
+      value: 
+      objectReference: {fileID: 491907234}
+    - target: {fileID: 6468814354589633806, guid: 9d06d041198c4864dacda357c658fc82,
+        type: 3}
+      propertyPath: _cameraAnimator
+      value: 
+      objectReference: {fileID: 491907234}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d06d041198c4864dacda357c658fc82, type: 3}
 --- !u!1001 &4983771201772496596
@@ -19396,6 +19417,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player2
       objectReference: {fileID: 0}
+    - target: {fileID: 1263586042535963941, guid: 01cbea4611fa8594aa64b727edf76bf3,
+        type: 3}
+      propertyPath: _cameraAnimator
+      value: 
+      objectReference: {fileID: 491907234}
+    - target: {fileID: 6022635488985597517, guid: 01cbea4611fa8594aa64b727edf76bf3,
+        type: 3}
+      propertyPath: _cameraAnimator
+      value: 
+      objectReference: {fileID: 491907234}
+    - target: {fileID: 6468814354589633806, guid: 01cbea4611fa8594aa64b727edf76bf3,
+        type: 3}
+      propertyPath: _cameraAnimator
+      value: 
+      objectReference: {fileID: 491907234}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01cbea4611fa8594aa64b727edf76bf3, type: 3}
 --- !u!1001 &7356078920405519420

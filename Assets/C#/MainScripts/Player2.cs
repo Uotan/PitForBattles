@@ -6,7 +6,7 @@ using UnityEngine;
 public class Player2 : MonoBehaviour
 {
 
-    //присваивание значений из PlayerPrefs
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ PlayerPrefs
     static string p2_LeftPREFS;
     KeyCode LeftBUTT;
 

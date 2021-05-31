@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnterExitEvent : MonoBehaviour
 {
     SpriteRenderer _render;
+    public Color _maincolor;
     public Color _changecolor;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class EnterExitEvent : MonoBehaviour
     }
     private void OnMouseExit()
     {
-        _render.color = new Color(1f, 1f, 1f, 1f);
+        _render.color = _maincolor;
 
     }
     

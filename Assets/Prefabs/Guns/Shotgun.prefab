@@ -129,12 +129,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bcaf757249ddf43b8c7a6d31f0534b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraAnimator: {fileID: 4948113040612236272, guid: 71efeb3dbaeaddd42b7a70eac2840bba,
+    type: 3}
   isReloadedscript: {fileID: 0}
   startCartridges: 10
   cartridges: 10
   startCartridgesInBarage: 1
   cartridgesInBarage: 1
-  offset: 0
+  _isheavyshot: 1
   NumberOfBullets: 8
   bullet: {fileID: 306275647784661212, guid: 87e739611b1396445b79ed8141c69288, type: 3}
   shootpoint: {fileID: 5249413436735681293}

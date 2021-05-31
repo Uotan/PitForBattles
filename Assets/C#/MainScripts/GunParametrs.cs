@@ -5,22 +5,18 @@ using UnityEngine;
 public class GunParametrs : MonoBehaviour
 {
     static string shoottPREFS;
-    KeyCode shootBUTT;
+    KeyCode shootBUTT;//кнопка для выстрела
+    public Animator _cameraAnimator;
+    public ReloadChecker isReloadedscript;//проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
 
 
-    //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
-    public ReloadChecker isReloadedscript;
-
-
-
+    //параметры боезапаса
     public int startCartridges;
     public int cartridges;
-
     public int startCartridgesInBarage;
     public int cartridgesInBarage;
 
-
-    public float offset;
+    public bool _isheavyshot;//нужен, чтобы регулировать силу тряски камеры при выстреле
     public int NumberOfBullets;
     public GameObject bullet;
     public Transform shootpoint;
@@ -37,7 +33,7 @@ public class GunParametrs : MonoBehaviour
     public Animator _animatorController;
 
 
-    bool jstCheckbool = false;
+    bool jstCheckbool = false;//нужна для нормальной работы перезарядки
 
     GunState Gstate;
 
@@ -65,10 +61,8 @@ public class GunParametrs : MonoBehaviour
         if (cartridgesInBarage <= 0 && cartridges > 0 && jstCheckbool == false)
         {
             reloadTime = startReloadTime;
-            Debug.Log("Reload");
             jstCheckbool = true;
             Invoke("Reload", 0.2f);
-            //Reload();
         }
         if (Gstate == GunState.Shoot)
         {
@@ -85,6 +79,7 @@ public class GunParametrs : MonoBehaviour
             //проверка на перезарядку, чтобы игрок не мог менять оружие во время перезарядки
             isReloadedscript.isReload = false;
             _animatorController.Play("IdleGun");
+            
         }
         if (reloadTime <= 0)
         {
@@ -92,6 +87,14 @@ public class GunParametrs : MonoBehaviour
                 {
                     if (Input.GetKey(shootBUTT) && cartridgesInBarage > 0)
                     {
+                        if (_isheavyshot==true)
+                        {
+                            _cameraAnimator.SetTrigger("shake1");
+                        }
+                        else
+                        {
+                            _cameraAnimator.SetTrigger("shake2");
+                        }
                         Gstate = GunState.Shoot;
                         Instantiate(effect, effectPoint.position, Quaternion.identity);
                         cartridgesInBarage -= 1;

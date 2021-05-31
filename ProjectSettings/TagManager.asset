@@ -15,6 +15,7 @@ TagManager:
   - AutoGun
   - Shotgun
   - Ammo
+  - soundPoint
   layers:
   - Default
   - TransparentFX

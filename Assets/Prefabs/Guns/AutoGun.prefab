@@ -178,18 +178,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66bcaf757249ddf43b8c7a6d31f0534b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cameraAnimator: {fileID: 4948113040612236272, guid: 71efeb3dbaeaddd42b7a70eac2840bba,
+    type: 3}
   isReloadedscript: {fileID: 0}
   startCartridges: 100
   cartridges: 0
   startCartridgesInBarage: 20
   cartridgesInBarage: 0
-  offset: 0
+  _isheavyshot: 0
   NumberOfBullets: 1
   bullet: {fileID: 2280664424432453322, guid: 8e4bfb4661c37e44aa0e0d160f0bc103, type: 3}
   shootpoint: {fileID: 5936169581619615460}
   effect: {fileID: 4142953573198285388, guid: 30d62aa9480dee4469a0382c871ea184, type: 3}
   effectPoint: {fileID: 5936169582671316775}
-  StartTimeBTWShots: 0.12
+  StartTimeBTWShots: 0.09
   reloadTime: 0
   startReloadTime: 1.4
   _animatorController: {fileID: 0}
