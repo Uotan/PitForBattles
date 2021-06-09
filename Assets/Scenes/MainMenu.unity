@@ -205,7 +205,7 @@ Transform:
   m_GameObject: {fileID: 108462488}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -3.47, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -768,7 +768,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.17254902, g: 0.1882353, b: 0.1882353, a: 1}
+  m_BackGroundColor: {r: 0.1877693, g: 0.1981132, b: 0.098122105, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1342,10 +1342,15 @@ MonoBehaviour:
   _audiopoints: []
   _audioClips:
   - {fileID: 8300000, guid: 27e5abad4cbcb834b90daf248e6d5263, type: 3}
-  - {fileID: 8300000, guid: f890769ca2a868e46b8843f8c3e26200, type: 3}
+  - {fileID: 8300000, guid: 6c13399248d4fa2498c2688734eebeb8, type: 3}
+  - {fileID: 8300000, guid: 49fc42a4a5bb60d4a969fe007b9745fb, type: 3}
+  - {fileID: 8300000, guid: d4cf77b2154d39541a1102aa7cdfdebc, type: 3}
   - {fileID: 8300000, guid: 21b4c726a07ac444abbd8cbaf7e31ec5, type: 3}
-  - {fileID: 8300000, guid: 89c7d783ef5fde641aebb81bb7d28c2f, type: 3}
+  - {fileID: 8300000, guid: accc77a0d71795448b7b84141c88df01, type: 3}
+  - {fileID: 8300000, guid: c46d825e6299bd24c8aabc76d8394d34, type: 3}
+  - {fileID: 8300000, guid: f890769ca2a868e46b8843f8c3e26200, type: 3}
   _CurClip: 0
+  _test: 0
 --- !u!1 &1382782615
 GameObject:
   m_ObjectHideFlags: 0
@@ -1456,8 +1461,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1487061442}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.25, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: 0, y: -1.45, z: 0}
+  m_LocalScale: {x: 1.7, y: 1.7, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2

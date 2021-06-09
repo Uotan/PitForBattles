@@ -10,7 +10,7 @@ public class noDestroyOnLoad : MonoBehaviour
     public AudioClip[] _audioClips;
     public int _CurClip;
     bool _ClipReady = false;
-    //public bool _test = false;
+    public bool _test = false;
     void Start()
     {
         _CurClip = Random.Range(0,_audioClips.Length);
@@ -30,10 +30,10 @@ public class noDestroyOnLoad : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // if (_test == true)
-        // {
-        //     NewTrack();
-        // }
+        if (_test == true)
+        {
+            NewTrack();
+        }
         if (!_audisource.isPlaying&&_ClipReady==false)
         {
             _ClipReady = true;
@@ -41,7 +41,7 @@ public class noDestroyOnLoad : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex!=0&&SceneManager.GetActiveScene().buildIndex!=1)
         {
-            _audisource.volume = 0.27f;
+            _audisource.volume = 0.2f;
             //Destroy(this.gameObject);
         }
         else
@@ -51,7 +51,7 @@ public class noDestroyOnLoad : MonoBehaviour
     }
     void NewTrack()
     {
-        //_test = false;
+        _test = false;
         if ((_CurClip+1)==_audioClips.Length)
         {
             _CurClip = 0;

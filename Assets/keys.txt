@@ -25,3 +25,12 @@ Set_net_swith
 
 Set_volume_range
 Set_volume_active
+
+
+
+//цвет для фона темный
+3F3F3F
+
+
+//главный фон
+2C3030
