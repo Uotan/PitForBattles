@@ -5,43 +5,43 @@ using UnityEngine.UI;
 
 public class PP_manager : MonoBehaviour
 {
-    public string p1_left;
+    string p1_left;
     public Text p1_leftTEXT;
 
 
-    public string p1_right;
+    string p1_right;
     public Text p1_rightTEXT;
 
 
-    public string p1_jump;
+    string p1_jump;
     public Text p1_jumpTEXT;
 
 
-    public string p1_shoot;
+    string p1_shoot;
     public Text p1_shootTEXT;
 
 
-    public string p1_switch;
+    string p1_switch;
     public Text p1_switchTEXT;
 
 
-    public string p2_left;
+    string p2_left;
     public Text p2_leftTEXT;
 
 
-    public string p2_right;
+    string p2_right;
     public Text p2_rightTEXT;
 
 
-    public string p2_jump;
+    string p2_jump;
     public Text p2_jumpTEXT;
 
 
-    public string p2_shoot;
+    string p2_shoot;
     public Text p2_shootTEXT;
 
 
-    public string p2_switch;
+    string p2_switch;
     public Text p2_switchTEXT;
     void Start()
     {

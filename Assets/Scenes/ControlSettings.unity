@@ -2564,25 +2564,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddc85f381c70c9b42a4cd3d46157df81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1_left: 
   p1_leftTEXT: {fileID: 786359715}
-  p1_right: 
   p1_rightTEXT: {fileID: 1752580936}
-  p1_jump: 
   p1_jumpTEXT: {fileID: 536915526}
-  p1_shoot: 
   p1_shootTEXT: {fileID: 1408780578}
-  p1_switch: 
   p1_switchTEXT: {fileID: 16086897}
-  p2_left: 
   p2_leftTEXT: {fileID: 5689111}
-  p2_right: 
   p2_rightTEXT: {fileID: 1412477353}
-  p2_jump: 
   p2_jumpTEXT: {fileID: 1614209410}
-  p2_shoot: 
   p2_shootTEXT: {fileID: 1532900340}
-  p2_switch: 
   p2_switchTEXT: {fileID: 1163589733}
 --- !u!114 &1411265110
 MonoBehaviour:
@@ -2608,7 +2598,7 @@ MonoBehaviour:
   p2_switchTEXT: {fileID: 1163589733}
   p1_name: {fileID: 1234135788}
   p2_name: {fileID: 331429168}
-  sceneNumb: 3
+  sceneCount: 4
   CurrentScene: 1
 --- !u!114 &1411265111
 MonoBehaviour:

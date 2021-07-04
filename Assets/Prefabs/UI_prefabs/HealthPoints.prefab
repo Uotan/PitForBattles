@@ -99,7 +99,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7356078920942912204}
-  - component: {fileID: 7356078920942912211}
   - component: {fileID: 7356078920942912205}
   m_Layer: 0
   m_Name: HealthPoints
@@ -125,29 +124,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7356078920942912211
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7356078920942912210}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e43f68354ffb744bd08066fa2f0cfe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startSpawnPoint:
-  - {fileID: 7356078920065268774}
-  - {fileID: 7356078920262851311}
-  - {fileID: 7356078920681922054}
-  - {fileID: 0}
-  - {fileID: 0}
-  spawnPoint: []
-  PrefabHealth: {fileID: 8102621426479742922, guid: f3a1475e6c1fc9e42b513471256bd8b8,
-    type: 3}
-  startSpawnTime: 25
-  spawnTime: 5
 --- !u!114 &7356078920942912205
 MonoBehaviour:
   m_ObjectHideFlags: 0

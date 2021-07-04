@@ -10,7 +10,7 @@ public class ArrowForward : MonoBehaviour
     private void OnMouseUp()
     {
         Debug.Log("Forward");
-        if (_script.CurrentScene!= _script.sceneNumb)
+        if (_script.CurrentScene!= _script.sceneCount)
         {
             _script.CurrentScene++;
             _currentPit.text = "pit " + _script.CurrentScene.ToString();
