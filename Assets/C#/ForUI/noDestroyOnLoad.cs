@@ -41,7 +41,7 @@ public class noDestroyOnLoad : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().buildIndex!=0&&SceneManager.GetActiveScene().buildIndex!=1)
         {
-            _audisource.volume = 0.2f;
+            //_audisource.volume = 0.2f;
             //Destroy(this.gameObject);
         }
         else

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1551d017dde86d9478509dd494c9946e
+guid: c21592e4979ba1d4a97b523efcbdc3e8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2429646778961591840
-    second: CrutchGames2_0
+      213: 705622503321589060
+    second: Exit_Tip_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -106,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: CrutchGames2_0
+      name: Exit_Tip_0
       rect:
         serializedVersion: 2
-        x: 48
-        y: 6
-        width: 390
-        height: 267
+        x: 7
+        y: 7
+        width: 41
+        height: 48
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,8 +120,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e1825a9029284ed0800000000000000
-      internalID: -2429646778961591840
+      spriteID: 4455100adefdac900800000000000000
+      internalID: 705622503321589060
       vertices: []
       indices: 
       edges: []

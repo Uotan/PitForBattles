@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
         p1_nameTXT.text = PlayerPrefs.GetString("Set_p1_name");
         p2_nameTXT.text = PlayerPrefs.GetString("Set_p2_name");
         startTime = timeMig;
@@ -72,11 +72,11 @@ public class GameManager : MonoBehaviour
 
 
 
-        if (Input.GetKeyUp(KeyCode.Escape))
+        if (Input.GetKeyUp(KeyCode.Tab))
         {
             PlayerPrefs.DeleteKey("p1win");
             PlayerPrefs.DeleteKey("p2win");
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.lockState = CursorLockMode.None;
             SceneManager.LoadScene(0);
         }
     }
